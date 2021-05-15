@@ -3,8 +3,9 @@ import { useParams, Link, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
+import ConfirmationModal from "../../components/ConfirmationModal";
 
-function PatientDetails() {
+function UserDetail() {
   const [state, setState] = useState({
     address: {
       street: "",
@@ -21,6 +22,7 @@ function PatientDetails() {
     user_pic: "",
     date_of_birth: "",
     gender: "",
+    role: "",
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -31,20 +33,32 @@ function PatientDetails() {
   const { loggedInUser } = useContext(AuthContext);
 
   useEffect(() => {
-    async function fetchBeer() {
+    async function fetchUser() {
       try {
-        const response = await api.get(`/patients/${id}`);
+        const response = await api.get(`/users/${id}`);
 
         setState({ ...response.data });
       } catch (err) {
         console.error(err);
       }
     }
-    fetchBeer();
+    fetchUser();
   }, [id]);
 
   return (
     <div>
+      {loggedInUser.user.role === "ADMIN" ? (
+        <div className="row d-flex justify-content-end">
+          <Link to={`/users/${id}`} className="btn btn-warning mr-3">
+            Edit
+          </Link>
+          {/* Abrimos um modal de confirmação antes de deletar o produto */}
+          <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+            Delete
+          </button>
+        </div>
+      ) : null}
+
       <img
         className="card-img product-img mx-auto mt-2"
         src={state.user_pic}
@@ -58,6 +72,8 @@ function PatientDetails() {
         <p className="card-text">{state.social_security_number}</p>
 
         <p className="mb-0">{state.gender}</p>
+
+        <p className="mb-0">{state.role}</p>
 
         <p>
           <small>
@@ -95,8 +111,16 @@ function PatientDetails() {
           </li>
         </ul>
       </div>
+      <ConfirmationModal
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+        handleConfirm={() => history.push(`/patient/${id}`)}
+        title="Are you sure you want to delete this product?"
+      >
+        <p>This action is irreversible. To confirm, click "Confirm".</p>
+      </ConfirmationModal>
     </div>
   );
 }
 
-export default PatientDetails;
+export default UserDetail;
