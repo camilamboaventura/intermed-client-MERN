@@ -49,7 +49,7 @@ function UserDetail() {
     <div>
       {loggedInUser.user.role === "ADMIN" ? (
         <div className="row d-flex justify-content-end">
-          <Link to={`/users/${id}`} className="btn btn-warning mr-3">
+          <Link to={`/users/edit/${id}`} className="btn btn-warning mr-3">
             Edit
           </Link>
           {/* Abrimos um modal de confirmação antes de deletar o produto */}
