@@ -7,6 +7,7 @@ import PatientFeed from "../routeComponents/patients/PatientFeed";
 import PatientDetail from "../routeComponents/patients/PatientDetail";
 import UserFeed from "../routeComponents/users/UserFeed";
 import UserDetail from "../routeComponents/users/UserDetail";
+import UserCreate from "../routeComponents/users/UserCreate";
 import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/patients/:id" component={PatientDetail} />
           <Route exact path="/users" component={UserFeed} />
           <Route exact path="/users/:id" component={UserDetail} />
+          <Route exact path="/signup" component={UserCreate} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
