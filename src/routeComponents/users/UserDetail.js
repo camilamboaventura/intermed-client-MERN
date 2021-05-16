@@ -59,6 +59,8 @@ function UserDetail() {
         </div>
       ) : null}
 
+    
+
       <img
         className="card-img product-img mx-auto mt-2"
         src={state.user_pic}

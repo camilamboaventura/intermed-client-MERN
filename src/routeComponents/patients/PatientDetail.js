@@ -55,7 +55,16 @@ function PatientDetails() {
   }, [id]);
 
   return (
+    
     <div>
+    {loggedInUser.user.role === "DOCTOR" ? (
+        <div className="row d-flex justify-content-end">
+          <Link to={`/patients/record/${id}`} className="btn btn-warning mr-3">
+            Create Record
+          </Link>
+
+        </div>
+      ) : null}
       <img className="profile-pic" src={state.user_pic} alt="user" />
       <div>
         <h4>
