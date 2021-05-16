@@ -46,7 +46,7 @@ function UserEdit() {
   function handleChange(event) {
     if (event.target.files) {
       setState({ ...state, [event.target.name]: event.target.files[0] });
-      setAddress({ ...address, [event.target.name]: event.target.files });
+      setAddress({ ...address, [event.target.name]: event.target.files[0] });
     } else {
       setState({ ...state, [event.target.name]: event.target.value });
       setAddress({ ...address, [event.target.name]: event.target.value });

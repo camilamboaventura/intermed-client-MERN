@@ -59,6 +59,8 @@ function UserDetail() {
         </div>
       ) : null}
 
+    
+
       <img
         className="card-img product-img mx-auto mt-2"
         src={state.user_pic}
@@ -114,7 +116,7 @@ function UserDetail() {
       <ConfirmationModal
         show={showModal}
         handleClose={() => setShowModal(false)}
-        handleConfirm={() => history.push(`/patient/${id}`)}
+        handleConfirm={() => history.push(`/users/delete/${id}`)}
         title="Are you sure you want to delete this product?"
       >
         <p>This action is irreversible. To confirm, click "Confirm".</p>
