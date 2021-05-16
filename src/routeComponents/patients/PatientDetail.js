@@ -3,6 +3,7 @@ import { useParams, Link, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
+import "./UsersCard.css";
 
 function PatientDetails() {
   const [state, setState] = useState({
@@ -21,6 +22,16 @@ function PatientDetails() {
     user_pic: "",
     date_of_birth: "",
     gender: "",
+    records: [
+      {
+        allergy: [],
+        chief_complaint: "",
+        history_illness: "",
+        medications: [],
+        test_results: "",
+        date_of_visit: "",
+      },
+    ],
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -45,19 +56,17 @@ function PatientDetails() {
 
   return (
     <div>
-      <img
-        className="card-img product-img mx-auto mt-2"
-        src={state.user_pic}
-        alt="user"
-      />
-      <div className="card-body">
-        <h4 className="card-title">
+      <img className="profile-pic" src={state.user_pic} alt="user" />
+      <div>
+        <h4>
           <small>{state.name}</small>
         </h4>
 
-        <p className="card-text">{state.social_security_number}</p>
+        <p>Patient ID:{state._id}</p>
 
-        <p className="mb-0">{state.gender}</p>
+        <p>{state.social_security_number}</p>
+
+        <p>{state.gender}</p>
 
         <p>
           <small>
@@ -94,6 +103,49 @@ function PatientDetails() {
             {state.address.country}
           </li>
         </ul>
+
+        
+
+        {state.records.map((record) => {
+          if (record) {
+            return (
+              <div>
+              <h2>Record Information of {record.date_of_visit}</h2>
+              <hr/>
+              <ul>
+                
+                <li>
+                  <strong>Chief Complaint: </strong>
+                  {record.chief_complaint}
+                </li>
+                <li>
+                  <strong>History Illness:: </strong>
+                  {record.history_illness}
+                </li>
+
+                <li>
+                  <strong>Allergy: </strong>
+                  {record.allergy}
+                </li>
+
+                <li>
+                  <strong>Medications: </strong>
+                  {record.medications}
+                </li>
+
+                <li>
+                  <strong>Test Results: </strong>
+                  {record.test_results}
+                </li>
+              </ul>
+
+              </div>
+              
+            );
+          } else {
+            return null;
+          }
+        })}
       </div>
     </div>
   );
