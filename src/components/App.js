@@ -9,6 +9,7 @@ import UserFeed from "../routeComponents/users/UserFeed";
 import UserDetail from "../routeComponents/users/UserDetail";
 import UserCreate from "../routeComponents/users/UserCreate";
 import UserEdit from "../routeComponents/users/UserEdit"
+import UserDelete from "../routeComponents/users/UserDelete"
 import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/users/:id" component={UserDetail} />
           <Route exact path="/signup" component={UserCreate} />
           <Route exact path="/users/edit/:id" component={UserEdit} />
+          <Route exact path="/users/delete/:id" component={UserDelete} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
