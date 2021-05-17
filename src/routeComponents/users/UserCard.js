@@ -23,7 +23,7 @@ function UserCard(props) {
           </h4>
 
           <p className="mb-0">
-            <small className="card-text">{props.user.date_of_birth}</small>
+            <small className="card-text">{new Date(props.user.date_of_birth).toLocaleDateString()}</small>
           </p>
 
           <p className="card-text mb-0">

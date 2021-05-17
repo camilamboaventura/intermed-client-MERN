@@ -80,7 +80,7 @@ function UserDetail() {
 
         <p>
           <small>
-            Date of Birthday: {new Date(state.date_of_birth).toLocaleString()}
+            Date of Birthday: {new Date(state.date_of_birth).toLocaleDateString()}
           </small>
         </p>
 

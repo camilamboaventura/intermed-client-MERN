@@ -56,7 +56,7 @@ function RecordCreate() {
       });
 
       // Redireciona programaticamente para a URL '/'
-      history.push("/");
+      history.push("/patients");
     } catch (err) {
       console.error(err);
     }
