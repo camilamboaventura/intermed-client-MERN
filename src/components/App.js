@@ -8,9 +8,10 @@ import PatientDetail from "../routeComponents/patients/PatientDetail";
 import UserFeed from "../routeComponents/users/UserFeed";
 import UserDetail from "../routeComponents/users/UserDetail";
 import UserCreate from "../routeComponents/users/UserCreate";
-import UserEdit from "../routeComponents/users/UserEdit"
-import UserDelete from "../routeComponents/users/UserDelete"
-import RecordCreate from "../routeComponents/records/RecordCreate"
+import UserEdit from "../routeComponents/users/UserEdit";
+import UserDelete from "../routeComponents/users/UserDelete";
+import RecordCreate from "../routeComponents/records/RecordCreate";
+import Profile from "../routeComponents/auth/Profile";
 import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
           <Route exact path="/users/edit/:id" component={UserEdit} />
           <Route exact path="/users/delete/:id" component={UserDelete} />
           <Route exact path="/patients/record/:id" component={RecordCreate} />
-          
+          <Route exact path="/profile/:id" component={Profile} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
