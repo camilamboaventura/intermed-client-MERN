@@ -144,6 +144,29 @@ function UserForm(props) {
         />
       </div>
 
+      {/* <div>
+<p><label htmlFor="userFormRole">Role</label></p>
+      <div className="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="customRadioInline" className="custom-control-input"/>
+  <label className="custom-control-label" value="{props.state.role}" id="userFormRole"
+          name="role" onChange={props.handleChange} for="customRadioInline1">ADMIN</label>
+</div>
+
+<div className="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline2" name="customRadioInline" className="custom-control-input"/>
+  <label className="custom-control-label" value="{props.state.role}" id="userFormRole"
+          name="role" onChange={props.handleChange} for="customRadioInline2">DOCTOR</label>
+</div>
+
+<div className="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline3" name="customRadioInline" className="custom-control-input"/>
+  <label className="custom-control-label" value="{props.state.role}" id="userFormRole"
+          name="role" onChange={props.handleChange} for="customRadioInline3">USER</label>
+</div>
+
+{props.role === "DOCTOR" ? (<p>medical_specialty</p>) : null}
+</div> */}
+
       <div className="form-group">
         <label htmlFor="userFormRole">Role</label>
         <input

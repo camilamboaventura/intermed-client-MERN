@@ -30,6 +30,7 @@ function PatientDetails() {
         medications: [],
         test_results: "",
         date_of_visit: "",
+        created_by: "",
       },
     ],
   });
@@ -42,27 +43,25 @@ function PatientDetails() {
   const { loggedInUser } = useContext(AuthContext);
 
   useEffect(() => {
-    async function fetchBeer() {
+    async function fetchPatient() {
       try {
         const response = await api.get(`/patients/${id}`);
-
+        console.log(response);
         setState({ ...response.data });
       } catch (err) {
         console.error(err);
       }
     }
-    fetchBeer();
+    fetchPatient();
   }, [id]);
 
   return (
-    
     <div>
-    {loggedInUser.user.role === "DOCTOR" ? (
+      {loggedInUser.user.role === "DOCTOR" ? (
         <div className="row d-flex justify-content-end">
           <Link to={`/patients/record/${id}`} className="btn btn-warning mr-3">
             Create Record
           </Link>
-
         </div>
       ) : null}
       <img className="profile-pic" src={state.user_pic} alt="user" />
@@ -113,43 +112,50 @@ function PatientDetails() {
           </li>
         </ul>
 
-        
-
         {state.records.map((record) => {
           if (record) {
             return (
               <div>
-              <h2>Record Information of {record.date_of_visit}</h2>
-              <hr/>
-              <ul>
-                
-                <li>
-                  <strong>Chief Complaint: </strong>
-                  {record.chief_complaint}
-                </li>
-                <li>
-                  <strong>History Illness:: </strong>
-                  {record.history_illness}
-                </li>
+                <h2>
+                  Record Information of{" "}
+                  {new Date(record.date_of_visit).toLocaleDateString()}
+                </h2>
+                <hr />
 
-                <li>
-                  <strong>Allergy: </strong>
-                  {record.allergy}
-                </li>
+                <ul>
+                  <li>
+                    <strong>Doctor: </strong>
+                    {record.created_by.name}
+                  </li>
+                  <li>
+                    <strong>Doctor Especiality: </strong>
+                    {record.created_by.name}
+                  </li>
+                  <li>
+                    <strong>Chief Complaint: </strong>
+                    {record.chief_complaint}
+                  </li>
+                  <li>
+                    <strong>History Illness:: </strong>
+                    {record.history_illness}
+                  </li>
 
-                <li>
-                  <strong>Medications: </strong>
-                  {record.medications}
-                </li>
+                  <li>
+                    <strong>Allergy: </strong>
+                    {record.allergy}
+                  </li>
 
-                <li>
-                  <strong>Test Results: </strong>
-                  {record.test_results}
-                </li>
-              </ul>
+                  <li>
+                    <strong>Medications: </strong>
+                    {record.medications}
+                  </li>
 
+                  <li>
+                    <strong>Test Results: </strong>
+                    {record.test_results}
+                  </li>
+                </ul>
               </div>
-              
             );
           } else {
             return null;
