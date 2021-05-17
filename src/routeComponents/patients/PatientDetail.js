@@ -78,7 +78,7 @@ function PatientDetails() {
 
         <p>
           <small>
-            Date of Birthday: {new Date(state.date_of_birth).toLocaleString()}
+            Date of Birthday: {new Date(state.date_of_birth).toLocaleDateString()}
           </small>
         </p>
 
@@ -128,7 +128,7 @@ function PatientDetails() {
                     {record.created_by.name} <br/>
                   
                   
-                    <strong>Doctor Especiality: </strong>
+                    <strong>Doctor Specialty: </strong>
                     {record.created_by.medical_specialty}
                   <hr/>
                   <ul>
