@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
+import NavbarLogged from "../../components/NavBarLogged"
 
 import api from "../../apis/api";
 
@@ -41,6 +42,7 @@ function Profile() {
 
   return (
     <div>
+    <NavbarLogged/>
       <img
         className="card-img product-img mx-auto mt-2"
         src={state.user_pic}

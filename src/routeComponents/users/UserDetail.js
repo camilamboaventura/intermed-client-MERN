@@ -76,6 +76,7 @@ function UserDetail() {
         <p className="mb-0">{state.gender}</p>
 
         <p className="mb-0">{state.role}</p>
+        <p className="mb-0">{state.medical_specialty}</p>
 
         <p>
           <small>

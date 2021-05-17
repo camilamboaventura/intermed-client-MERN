@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useContext } from "react";
 
@@ -6,12 +6,13 @@ import { AuthContext } from "../contexts/authContext";
 
 function Navbar() {
   const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
-
+  const { id } = useParams();
   return (
+    <div>
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="ml-3">
-        <NavLink className="navbar-brand" to="/">
-          Ironbeers Store
+        <NavLink className="navbar-brand" to="/main">
+          Intermed
         </NavLink>
       </div>
 
@@ -30,31 +31,7 @@ function Navbar() {
         className="collapse navbar-collapse d-flex justify-content-between"
         id="navbarText"
       >
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <NavLink className="nav-link" activeClassName="active" to="/">
-              Home
-            </NavLink>
-          </li>
-          {/* Esconder o link de quem não for Admin */}
-          {loggedInUser.user.role === "ADMIN" ? (
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                activeClassName="active"
-                to="/create-product"
-              >
-                Create Product
-              </NavLink>
-            </li>
-          ) : null}
-
-          <li className="nav-item">
-            <NavLink className="nav-link" activeClassName="active" to="/all">
-              All Beers
-            </NavLink>
-          </li>
-        </ul>
+        
         <div className="mr-3">
           {loggedInUser.user.name ? (
             <Dropdown>
@@ -67,7 +44,7 @@ function Navbar() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item to="/profile" as={NavLink}>
+                <Dropdown.Item to={`/profile/${id}`} as={NavLink}>
                   Profile
                 </Dropdown.Item>
                 <Dropdown.Item
@@ -94,6 +71,7 @@ function Navbar() {
         </div>
       </div>
     </nav>
+    </div>
   );
 }
 
