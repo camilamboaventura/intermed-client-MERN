@@ -122,15 +122,16 @@ function PatientDetails() {
                 </h2>
                 <hr />
 
-                <ul>
-                  <li>
+                
+                  
                     <strong>Doctor: </strong>
-                    {record.created_by.name}
-                  </li>
-                  <li>
+                    {record.created_by.name} <br/>
+                  
+                  
                     <strong>Doctor Especiality: </strong>
-                    {record.created_by.name}
-                  </li>
+                    {record.created_by.medical_specialty}
+                  <hr/>
+                  <ul>
                   <li>
                     <strong>Chief Complaint: </strong>
                     {record.chief_complaint}

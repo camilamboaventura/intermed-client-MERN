@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import api from "../../apis/api";
+import NavbarLogged from "../../components/NavBarLogged"
 
 function UserFeed() {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,8 @@ function UserFeed() {
   }, []);
 
   return (
+    <div>
+    <NavbarLogged/>
     <div className="row">
       {users.map((user) => {
         return (
@@ -27,6 +30,7 @@ function UserFeed() {
           </div>
         );
       })}
+    </div>
     </div>
   );
 }
