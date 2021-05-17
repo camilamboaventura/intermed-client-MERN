@@ -35,7 +35,7 @@ function UserEdit() {
       try {
         const response = await api.get(`/users/${id}`);
         console.log(response);
-        setState({ ...response.data });
+        setState({ ...response.data, _id: id });
         setAddress({ ...response.data.address });
       } catch (err) {
         console.error(err);
@@ -66,7 +66,7 @@ function UserEdit() {
   }
   async function handleSubmit(event) {
     try {
-        console.log("oi")
+      console.log("oi");
       event.preventDefault();
       // Fazendo um backup da imagem atual
       let uploadedImageUrl = state.user_pic;

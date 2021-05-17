@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
@@ -25,7 +25,6 @@ function Login(props) {
 
     try {
       const response = await api.post("/login", state);
-      console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
@@ -33,7 +32,9 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      props.history.push("/book/all");
+      console.log(response.data);
+      const { _id } = response.data.user;
+      props.history.push(`/profile/${_id}`);
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
