@@ -3,27 +3,19 @@ import { useParams, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
 
-
-
 function RecordCreate() {
   const history = useHistory();
 
   const [state, setState] = useState({
-  
-  date_of_visit: "",
-  allergy: [],
-  chief_complaint:"",
-  history_illness: "",
-  medications: [],
-  test_results: "",
+    date_of_visit: "",
+    allergy: [],
+    chief_complaint: "",
+    history_illness: "",
+    medications: [],
+    test_results: "",
   });
 
-  
- 
   const { id } = useParams();
-  
-
-  
 
   function handleChange(event) {
     if (event.target.files) {
@@ -76,95 +68,82 @@ function RecordCreate() {
 
       <hr />
       <form className="mb-5" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="recordFormDateOfVisit">Date of Visit</label>
-        <input
-          type="date"
-          className="form-control"
-          id="recordFormDateOfVisit"
-          name="date_of_visit"
-          onChange={handleChange}
-          value={state.date_of_visit}
-        />
-      </div>
-      
-      
-      <div className="form-group">
-        <label htmlFor="recordFormChiefComplaint">Chief Complaint</label>
-        <input
-          type="text"
-          className="form-control"
-          id="recordFormChiefComplaint"
-          name="chief_complaint"
-          onChange={handleChange}
-          value={state.chief_complaint}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="recordFormDateOfVisit">Date of Visit</label>
+          <input
+            type="date"
+            className="form-control"
+            id="recordFormDateOfVisit"
+            name="date_of_visit"
+            onChange={handleChange}
+            value={state.date_of_visit}
+          />
+        </div>
 
+        <div className="form-group">
+          <label htmlFor="recordFormChiefComplaint">Chief Complaint</label>
+          <input
+            type="text"
+            className="form-control"
+            id="recordFormChiefComplaint"
+            name="chief_complaint"
+            onChange={handleChange}
+            value={state.chief_complaint}
+          />
+        </div>
 
-      <div className="form-group">
-        <label htmlFor="recordFormHistoryIllness">History Illness</label>
-        <input
-          type="text"
-          className="form-control"
-          id="recordFormHistoryIllness"
-          name="history_illness"
-          onChange={handleChange}
-          value={state.history_illness}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="recordFormHistoryIllness">History Illness</label>
+          <input
+            type="text"
+            className="form-control"
+            id="recordFormHistoryIllness"
+            name="history_illness"
+            onChange={handleChange}
+            value={state.history_illness}
+          />
+        </div>
 
- 
+        <div className="form-group">
+          <label htmlFor="recordFormMedications">Medications</label>
+          <input
+            type="text"
+            className="form-control"
+            id="recordFormMedications"
+            name="medications"
+            onChange={handleChange}
+            value={state.medications}
+          />
+        </div>
 
-      <div className="form-group">
-        <label htmlFor="recordFormMedications">Medications</label>
-        <input
-          type="text"
-          className="form-control"
-          id="recordFormMedications"
-          name="medications"
-          onChange={handleChange}
-          value={state.medications}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="recordFormAllergy">Allergies</label>
+          <input
+            type="text"
+            className="form-control"
+            id="recordFormAllergy"
+            name="allergy"
+            onChange={handleChange}
+            value={state.allergy}
+          />
+        </div>
 
+        <div className="form-group">
+          <label htmlFor="recordFormTestResults">Test Results</label>
+          <input
+            type="file"
+            className="form-control"
+            id="recordFormTestResults"
+            name="test_results"
+            onChange={handleChange}
+          />
+        </div>
 
-
-      <div className="form-group">
-        <label htmlFor="recordFormAllergy">Allergies</label>
-        <input
-          type="text"
-          className="form-control"
-          id="recordFormAllergy"
-          name="allergy"
-          onChange={handleChange}
-          value={state.allergy}
-        />
-      </div>
-
-
-
-      <div className="form-group">
-        <label htmlFor="recordFormTestResults">Test Results</label>
-        <input
-          type="file"
-          className="form-control"
-          id="recordFormTestResults"
-          name="test_results"
-          onChange={handleChange}
-        />
-      </div>
-
-      <hr />
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
-    </form>
-
-
-
-
-      
+        <hr />
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
     </div>
   );
 }
