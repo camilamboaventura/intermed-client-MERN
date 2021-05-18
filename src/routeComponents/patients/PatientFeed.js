@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PatientCard from "./PatientCard";
+import NavbarLogged from "../../components/NavBarLogged";
 import api from "../../apis/api";
 
 function PatientFeed() {
@@ -19,14 +20,17 @@ function PatientFeed() {
   }, []);
 
   return (
-    <div className="row">
-      {patients.map((patient) => {
-        return (
-          <div key={patient._id} className="col-12 col-sm-4 col-md-3">
-            <PatientCard patient={patient} />
-          </div>
-        );
-      })}
+    <div>
+      <NavbarLogged />
+      <div className="row">
+        {patients.map((patient) => {
+          return (
+            <div key={patient._id} className="col-12 col-sm-4 col-md-3">
+              <PatientCard patient={patient} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
