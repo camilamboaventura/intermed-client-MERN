@@ -1,6 +1,7 @@
 import { useParams, NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useContext } from "react";
+import "../assets/styles/Home.css"
 
 import { AuthContext } from "../contexts/authContext";
 
@@ -8,8 +9,8 @@ function Navbar() {
   const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
   const { _id } = loggedInUser.user;
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div className="allNavbar">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-transparet">
         <div className="ml-3">
           <NavLink className="navbar-brand" to="/main">
             Intermed
@@ -34,7 +35,7 @@ function Navbar() {
           <div className="mr-3">
             {loggedInUser.user.name ? (
               <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle variant="transparent" id="dropdown-basic">
                   <img
                     src={`https://ui-avatars.com/api/?name=${loggedInUser.user.name}&size=32&background=random`}
                     className="rounded-circle"
