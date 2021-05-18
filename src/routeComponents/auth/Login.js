@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import api from "../../apis/api";
-
+import "../../assets/styles/PatientFeed.css"
+import background from "../../assets/images/loginBG.jpg"
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
@@ -42,10 +43,14 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+<img src={background} className="loginbackgroundPic" alt="background" />
+<div className="patientsFeed">
+<form onSubmit={handleSubmit}>
       <h1>Login</h1>
 
-      <div>
+<div className="card" style={{width: '18rem'}} >
+<div>
         <label htmlFor="signupFormEmail">E-mail Address</label>
         <input
           type="email"
@@ -72,11 +77,18 @@ function Login(props) {
       <div>
         <button type="submit">Login!</button>
 
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
-        </Link>
+        
       </div>
+
+</div>
+
+      
     </form>
+</div>
+
+
+    </div>
+    
   );
 }
 

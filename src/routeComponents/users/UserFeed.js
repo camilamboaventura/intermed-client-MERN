@@ -4,14 +4,25 @@ import api from "../../apis/api";
 import NavbarLogged from "../../components/NavBarLogged"
 
 function UserFeed() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState({USER:[],DOCTOR:[],ADMIN:[]});
 
   useEffect(() => {
     async function fetchUsers() {
       try {
         const response = await api.get("/users");
-
-        setUsers([...response.data]);
+        const auxObj = {USER:[],DOCTOR:[],ADMIN:[]}
+        response.data.map((user)=>{
+          if(user.role === "USER"){
+            auxObj.USER.push(user)
+          }
+          if(user.role === "DOCTOR"){
+            auxObj.DOCTOR.push(user)
+          }
+          if(user.role === "ADMIN"){
+            auxObj.ADMIN.push(user)
+          }
+        })
+        setUsers({...auxObj});
       } catch (err) {
         console.error(err);
       }
@@ -23,7 +34,7 @@ function UserFeed() {
     <div>
     <NavbarLogged/>
     <div className="row">
-      {users.map((user) => {
+      {users.DOCTOR.map((user) => {
         return (
           <div key={user._id} className="col-12 col-sm-4 col-md-3">
             <UserCard user={user} />

@@ -3,7 +3,9 @@ import { useParams, Link, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
+import NavbarLogged from "../../components/NavBarLogged";
 import "./UsersCard.css";
+import "../../assets/styles/PatientFeed.css"
 
 function PatientDetails() {
   const [state, setState] = useState({
@@ -57,6 +59,7 @@ function PatientDetails() {
 
   return (
     <div>
+    <NavbarLogged/>
       {loggedInUser.user.role === "DOCTOR" ? (
         <div className="row d-flex justify-content-end">
           <Link to={`/patients/record/${id}`} className="btn btn-warning mr-3">
