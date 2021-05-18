@@ -19,6 +19,7 @@ function App() {
     <BrowserRouter>
       <AuthContextComponent>
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route exact path="/main" component={Home} />
           <Route path="/auth" component={AuthRouter} />
           <Route exact path="/patients" component={PatientFeed} />
