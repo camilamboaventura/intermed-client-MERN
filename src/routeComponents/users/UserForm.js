@@ -144,47 +144,62 @@ function UserForm(props) {
         />
       </div>
 
-
-      {/* <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="userFormRole" name="role" class="custom-control-input" onChange={props.handleChange} value={props.state.role} checked={props.state.role === "ADMIN"} />
-  <label class="custom-control-label" for="customRadioInline1">ADMIN</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="userFormRole" name="role" class="custom-control-input" onChange={props.handleChange} value={props.state.role} checked={props.state.role === "DOCTOR"}/>
-  <label class="custom-control-label" for="customRadioInline2">DOCTOR</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="userFormRole" name="role" class="custom-control-input" onChange={props.handleChange} value={props.state.role} checked={props.state.role === "USER"}/>
-  <label class="custom-control-label" for="customRadioInline3">USER</label>
-</div> */}
-      
-
-
-
-      <div className="form-group">
-        <label htmlFor="userFormRole">Role</label>
+      <div class="custom-control custom-radio custom-control-inline">
         <input
-          type="text"
-          className="form-control"
-          id="userFormRole"
+          type="radio"
+          id="userFormRoleAdmin"
           name="role"
+          class="custom-control-input"
           onChange={props.handleChange}
-          value={props.state.role}
+          value="ADMIN"
+          checked={props.state.role === "ADMIN"}
         />
+        <label class="custom-control-label" htmlFor="userFormRoleAdmin">
+          ADMIN
+        </label>
       </div>
-
-      <div className="form-group">
-        <label htmlFor="userFormRole">If is doctor please detail the specialty.</label>
+      <div class="custom-control custom-radio custom-control-inline">
         <input
-          type="text"
-          className="form-control"
-          id="userFormMedicalSpecialty"
-          name="medical_specialty"
+          type="radio"
+          id="userFormRoleDoctor"
+          name="role"
+          class="custom-control-input"
           onChange={props.handleChange}
-          value={props.state.medical_specialty}
+          value="DOCTOR"
+          checked={props.state.role === "DOCTOR"}
         />
+        <label class="custom-control-label" htmlFor="userFormRoleDoctor">
+          DOCTOR
+        </label>
       </div>
-
+      <div class="custom-control custom-radio custom-control-inline">
+        <input
+          type="radio"
+          id="userFormRoleUser"
+          name="role"
+          class="custom-control-input"
+          onChange={props.handleChange}
+          value="USER"
+          checked={props.state.role === "USER"}
+        />
+        <label class="custom-control-label" htmlFor="userFormRoleUser">
+          USER
+        </label>
+      </div>
+      <br />
+      {props.state.role === "DOCTOR" ? (
+        <div className="form-group">
+          <label htmlFor="userFormRole">Medical Specialty</label>
+          <input
+            type="text"
+            className="form-control"
+            id="userFormMedicalSpecialty"
+            name="medical_specialty"
+            onChange={props.handleChange}
+            value={props.state.medical_specialty}
+          />
+        </div>
+      ) : null}
 
       <div className="form-group">
         <label htmlFor="userFormImage">User Picture</label>
@@ -196,8 +211,6 @@ function UserForm(props) {
           onChange={props.handleChange}
         />
       </div>
-
-     
 
       <hr />
       <button type="submit" className="btn btn-primary">
