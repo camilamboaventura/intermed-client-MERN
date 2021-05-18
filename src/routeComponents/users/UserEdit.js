@@ -80,7 +80,7 @@ function UserEdit() {
         user_pic: uploadedImageUrl,
       });
       // Redireciona programaticamente para a URL '/'
-      history.push("/");
+      history.push("/users");
     } catch (err) {
       console.error(err);
     }

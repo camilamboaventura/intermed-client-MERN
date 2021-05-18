@@ -12,6 +12,7 @@ import UserEdit from "../routeComponents/users/UserEdit";
 import UserDelete from "../routeComponents/users/UserDelete";
 import RecordCreate from "../routeComponents/records/RecordCreate";
 import Profile from "../routeComponents/auth/Profile";
+import RecordFeed from "../routeComponents/records/RecordFeed";
 import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/users/delete/:id" component={UserDelete} />
           <Route exact path="/patients/record/:id" component={RecordCreate} />
           <Route exact path="/profile/:id" component={Profile} />
+          <Route exact path="/patient/:id/records" component={RecordFeed} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
