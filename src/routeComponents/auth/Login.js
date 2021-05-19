@@ -44,10 +44,10 @@ function Login(props) {
 
   return (
     <div className="loginPage">
-<div className="alignLogo">
-<div className="logoimage">
+<div className="alignLogoLogin">
+<div className="logoimageLogin">
 <img
-              className="intermed"
+              className="intermedLogin"
               data-speed="0.6"
               src={intermed}
               alt="intermed"
