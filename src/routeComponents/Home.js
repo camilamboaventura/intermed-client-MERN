@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import family from "../assets/images/family.jpg";
-import intermed from "../assets/images/intermed01.png";
+import homeIntermed from "../assets/images/intermed01.png";
 import "../../src/assets/styles/Home.css";
 
 function Home() {
@@ -21,23 +21,23 @@ function Home() {
     <div className="allHomeBody">
       <div>
         <Navbar className="navbarCss" />
-        <header>
-          <div className="alignIntermed translate" data-speed="0.6">
+        <header className="homeHeader">
+          <div className="alignHomeIntermed translate" data-speed="0.6">
             <img
-              className="intermed translate"
+              className="homeIntermed translate"
               data-speed="0.1"
-              src={intermed}
-              alt="intermed"
+              src={homeIntermed}
+              alt="homeIntermed"
             />
           </div>
         </header>
-        <section>
-          <div className="shadow"></div>
-          <div className="containerCss">
-            <div className="content">
-              <h3 className="aboutTitle">
+        <section className="homeSection">
+          <div className="homeShadow"></div>
+          <div className="homeContainerCss">
+            <div className="homeContent">
+              <h3 className="aboutHomeTitle">
                 About Us
-                <div className="border"></div>
+                <div className="homeBorder"></div>
               </h3>
               <p className="text">
                 Lorem Ipsum é simplesmente uma simulação de texto da indústria
@@ -53,7 +53,7 @@ function Home() {
               </p>
             </div>
 
-            <div className="imgContainer">
+            <div className="imgHomeContainer">
               <img src={family} alt="family" />
             </div>
           </div>
