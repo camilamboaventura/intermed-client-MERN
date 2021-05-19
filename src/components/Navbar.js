@@ -1,6 +1,7 @@
 import { useParams, NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useContext } from "react";
+import logo from "../assets/images/logo01.png";
 import "../assets/styles/Home.css"
 
 import { AuthContext } from "../contexts/authContext";
@@ -13,7 +14,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparet">
         <div className="ml-3">
           <NavLink className="navbar-brand" to="/main">
-            Intermed
+          <img className="logo" src={logo} alt="logo" />
           </NavLink>
         </div>
 
