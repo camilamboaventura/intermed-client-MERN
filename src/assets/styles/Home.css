@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
 .navbarCss .allNavbar {
   z-index: 5;
   background-color: rgba(255, 255, 255, 0.4);
@@ -144,6 +151,24 @@ section img {
   /* opacity: 0; */
 }
 
+.loginNavbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.loginText {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 1em hsl(0, 0%, 40%),
+    0 0 0.2em hsl(0, 0%, 47%);
+  
+}
+
+.rounded-circle{
+  box-shadow: 0 0 5px 3px white;
+}
+
+
 @media (max-width: 850px) {
   section .containerCss {
     grid-template-columns: 1fr;
@@ -161,3 +186,5 @@ section img {
     font-size: 1.2rem;
   }
 }
+
+
