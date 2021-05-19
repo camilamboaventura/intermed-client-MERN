@@ -49,12 +49,12 @@
 
 }
 
-.intermed{
+.intermedLogin{
   width: 18%;
   
 }
 
-.alignLogo{
+.alignLogoLogin{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -63,7 +63,7 @@
 	align-content: center;
 }
 
-.logoimage{
+.logoimageLogin{
   margin-bottom: 42rem;
 }
 
