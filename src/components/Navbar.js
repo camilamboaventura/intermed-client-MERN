@@ -1,5 +1,5 @@
 import { useParams, NavLink, Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
+
 import { useContext } from "react";
 import logo from "../assets/images/logo01.png";
 import "../assets/styles/Home.css";
@@ -40,7 +40,8 @@ function Navbar() {
             {loggedInUser.user.name ? (
               <div className="loginNavbar">
                 <Link to={`/profile/${_id}`} as={NavLink}>
-                  <text className="loginText">Profile</text>&nbsp; <text className="loginText">|</text>
+                  <text className="loginText">Profile</text>&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
                 <Link
                   onClick={(event) => {
