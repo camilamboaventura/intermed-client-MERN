@@ -41,6 +41,11 @@ function NavbarLogged() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link loginText" to="/signup">
+                  Create New User
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link loginText" to="/admins">
                   Administation Team
                 </Link>

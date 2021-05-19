@@ -51,10 +51,10 @@ function Login(props) {
               data-speed="0.6"
               src={intermed}
               alt="intermed"
-              style={{marginTop:"13rem", marginLeft:"2rem"}}
+              
             />
 </div>
- <div style={{marginTop:"20rem"}}>
+ <div>
 <form onSubmit={handleSubmit}>
       
 
