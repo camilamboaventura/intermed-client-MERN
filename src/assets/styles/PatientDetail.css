@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  outline: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: grey;
+}
+
+.allNavbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 0;
+  border: thin solid hsl(14, 77%, 52%);
+  text-shadow: 1px 1px 2px black, 0 0 1em hsl(14, 77%, 52%),
+    0 0 0.2em hsl(14, 77%, 52%);
+  /* opacity: 0.4; */
+}
+
+.allPage {
+  /* overflow-x: hidden; */
+  background-image: url("../../assets/images/hospital-background-2.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-pic {
+  height: 13rem;
+  width: auto;
+}
+
+.box {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+  height: 16rem;
+}
+
+.img-patient {
+  margin-right: -450px;
+  margin-left: 20px;
+}
+
+.adressInfo {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+  height: 15rem;
+}
+
+.addressPatient {
+  margin-left: 12rem;
+}
+
+.recordInfo {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+}
+
+.recordRows {
+  padding-top: 2rem;
+  padding-left: 6rem;
+}

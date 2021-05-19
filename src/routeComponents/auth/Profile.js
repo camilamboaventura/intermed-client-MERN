@@ -43,12 +43,12 @@ function Profile() {
   }, []);
 
   return (
-    <div className="allPage">
+    <div className="allSection">
       <NavbarLogged />
       <div className="container mt-5">
         <div className="container">
           <div className="d-flex justify-content-start align-items-center rounded ">
-            <div className="col  img">
+            <div className="col  img-profile">
               <img
                 className="card-img product-img mx-auto rounded-circle mt-2"
                 src={state.user_pic}
@@ -58,7 +58,7 @@ function Profile() {
             <div className="col">
               <div className="card-body ">
                 <h4 className="card-title">
-                  <h3>{state.name}</h3>
+                  <h3>Welcome, {state.name}!</h3>
                 </h4>
 
                 <p className="mb-0">
@@ -81,9 +81,9 @@ function Profile() {
             </div>
           </div>
 
-          <div className="d-flex  align-items-center adress mt-5">
+          <div className="d-flex  align-items-center adress mt-4">
             <div className="col justify-content-center align-center ml-5">
-              <h2>Address Info</h2>
+              <h2>Address Information</h2>
               <ul>
                 <li>
                   <strong>Post Code: </strong>

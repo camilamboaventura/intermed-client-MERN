@@ -23,7 +23,9 @@ function ProductCard(props) {
           </h4>
 
           <p className="mb-0">
-            <small className="card-text">{new Date(props.patient.date_of_birth).toLocaleDateString()}</small>
+            <small className="card-text">
+              {new Date(props.patient.date_of_birth).toLocaleDateString()}
+            </small>
           </p>
 
           <p className="card-text mb-0">
@@ -36,4 +38,3 @@ function ProductCard(props) {
 }
 
 export default ProductCard;
-
