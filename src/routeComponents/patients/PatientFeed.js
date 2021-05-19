@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import PatientCard from "./PatientCard";
 import NavbarLogged from "../../components/NavBarLogged";
 import api from "../../apis/api";
-import "../../assets/styles/PatientFeed.css"
-import background from "../../assets/images/doctorBG.jpg"
+import "../../assets/styles/AllPatients.css"
+
 
 function PatientFeed() {
   const [patients, setPatients] = useState([]);
@@ -22,9 +22,8 @@ function PatientFeed() {
   }, []);
 
   return (
-    <div className="allPagePatients">
-    <img src={background} className="backgroundPic" alt="background" />
-      <div className="patientsFeed">
+    <div className="allPatients">
+      <div>
       <NavbarLogged />
       <div className="row">
         {patients.map((patient) => {
