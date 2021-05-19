@@ -14,6 +14,7 @@ import RecordCreate from "../routeComponents/records/RecordCreate";
 import Profile from "../routeComponents/auth/Profile";
 import RecordFeed from "../routeComponents/records/RecordFeed";
 import { AuthContextComponent } from "../contexts/authContext";
+import ConsultationCreate from "../routeComponents/consultation/ConsultationCreate";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/patients/record/:id" component={RecordCreate} />
           <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/patient/:id/records" component={RecordFeed} />
+          <Route exact path="/books" component={ConsultationCreate} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
-import background from "../../assets/images/patientRecord.jpg"
 import "../../assets/styles/PatientFeed.css"
 import NavbarLogged from "../../components/NavBarLogged";
 
