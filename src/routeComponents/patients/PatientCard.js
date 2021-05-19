@@ -4,16 +4,18 @@ import "./UsersCard.css";
 function PatientCard(props) {
   console.log(props)
   return (
+    <Link
+    className="text-decoration-none "
+    key={props.patient._id}
+    to={`/patients/${props.patient._id}`}
+  >
+    
     <div
     className="card card-fixed-height text-dark shadow rounded border-0 m-2 "
     style={{ width: "100%" }}
   >
     
-    <Link
-      className="text-decoration-none "
-      key={props.patient._id}
-      to={`/patients/${props.patient._id}`}
-    >
+
         <img
           className="card-img product-img mx-auto mt-2"
           src={props.patient.user_pic}
@@ -34,8 +36,9 @@ function PatientCard(props) {
             <small>{props.patient.gender}</small>
           </p>
         </div>
-    </Link>
+    
       </div>
+      </Link>
   );
 }
 
