@@ -13,6 +13,7 @@ import UserDelete from "../routeComponents/users/UserDelete";
 import RecordCreate from "../routeComponents/records/RecordCreate";
 import Profile from "../routeComponents/auth/Profile";
 import RecordFeed from "../routeComponents/records/RecordFeed";
+import Login from "../routeComponents/auth/Login";
 import { AuthContextComponent } from "../contexts/authContext";
 import ConsultationCreate from "../routeComponents/consultation/ConsultationCreate";
 
