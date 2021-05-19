@@ -11,14 +11,14 @@ function Navbar() {
   const { _id } = loggedInUser.user;
   return (
     <div className="allNavbar">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparet">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-transparet" style={{zIndex: "5"}}>
         <div className="ml-3">
           <NavLink className="navbar-brand" to="/main">
           <img className="logo" src={logo} alt="logo" />
           </NavLink>
         </div>
 
-        <button
+        <button 
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"

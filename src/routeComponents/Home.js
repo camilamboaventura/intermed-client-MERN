@@ -56,7 +56,7 @@ function Home() {
       />
 
       <div className="homeBody">
-        <Navbar className="navbar" />
+        <Navbar className="navbarCss" />
         <header>
           <div className="alignIntermed">
             <img
@@ -69,7 +69,7 @@ function Home() {
         </header>
         <section>
           <div className="shadow"></div>
-          <div className="container">
+          <div className="containerCss">
             <div className="content opacity">
               <h3 className="aboutTitle">
                 About Us
