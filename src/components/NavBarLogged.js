@@ -2,9 +2,7 @@ import { useParams, NavLink, Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useContext } from "react";
 import React from "react";
-
 import { AuthContext } from "../contexts/authContext";
-
 function NavbarLogged() {
   const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
   const authContext = useContext(AuthContext);
@@ -28,7 +26,6 @@ function NavbarLogged() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
@@ -71,7 +68,6 @@ function NavbarLogged() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
@@ -109,7 +105,6 @@ function NavbarLogged() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
@@ -137,5 +132,4 @@ function NavbarLogged() {
     </div>
   );
 }
-
 export default NavbarLogged;
