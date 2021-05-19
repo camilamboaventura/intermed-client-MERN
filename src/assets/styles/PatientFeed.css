@@ -54,6 +54,12 @@
   
 }
 
+.intermedLogin{
+  position: absolute;
+  top: calc(5%);
+  max-width: 50%;
+}
+
 .alignLogoLogin{
 	display: flex;
 	flex-direction: row;
