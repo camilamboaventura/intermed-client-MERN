@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import NavbarLogged from "../../components/NavBarLogged";
 
 import api from "../../apis/api";
 
@@ -49,6 +50,7 @@ function ConsultationCreate() {
 
   return (
     <div>
+    <NavbarLogged />
       <h1>New Appoitment </h1>
 
       <hr/>
