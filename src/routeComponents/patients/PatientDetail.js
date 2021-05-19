@@ -129,52 +129,53 @@ function PatientDetails() {
             </ul>
           </div>
         </div>
+        <div className="recordBox">
+          {state.records.map((record) => {
+            if (record) {
+              return (
+                <div className="recordInfo mt-4">
+                  <div className="recordRows">
+                    <h3>
+                      Record Information -{" "}
+                      {new Date(record.date_of_visit).toLocaleDateString()}
+                    </h3>
+                    <strong>Doctor: </strong>
+                    {record.created_by.name} <br />
+                    <strong>Doctor Specialty: </strong>
+                    {record.created_by.medical_specialty}
+                    <ul>
+                      <li>
+                        <strong>Chief Complaint: </strong>
+                        {record.chief_complaint}
+                      </li>
+                      <li>
+                        <strong>History Illness:: </strong>
+                        {record.history_illness}
+                      </li>
 
-        {state.records.map((record) => {
-          if (record) {
-            return (
-              <div className="recordInfo mt-4">
-                <div className="recordRows">
-                  <h3>
-                    Record Information -{" "}
-                    {new Date(record.date_of_visit).toLocaleDateString()}
-                  </h3>
-                  <strong>Doctor: </strong>
-                  {record.created_by.name} <br />
-                  <strong>Doctor Specialty: </strong>
-                  {record.created_by.medical_specialty}
-                  <ul>
-                    <li>
-                      <strong>Chief Complaint: </strong>
-                      {record.chief_complaint}
-                    </li>
-                    <li>
-                      <strong>History Illness:: </strong>
-                      {record.history_illness}
-                    </li>
+                      <li>
+                        <strong>Allergy: </strong>
+                        {record.allergy}
+                      </li>
 
-                    <li>
-                      <strong>Allergy: </strong>
-                      {record.allergy}
-                    </li>
+                      <li>
+                        <strong>Medications: </strong>
+                        {record.medications}
+                      </li>
 
-                    <li>
-                      <strong>Medications: </strong>
-                      {record.medications}
-                    </li>
-
-                    <li>
-                      <strong>Test Results: </strong>
-                      {record.test_results}
-                    </li>
-                  </ul>
+                      <li>
+                        <strong>Test Results: </strong>
+                        {record.test_results}
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })}
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>
       </div>
     </div>
   );
