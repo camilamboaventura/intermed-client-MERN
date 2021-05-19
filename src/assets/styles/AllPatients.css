@@ -1,0 +1,8 @@
+.allPatients {
+    background-image: url("../../assets/images/doctorBG.jpg");
+    height: auto;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
