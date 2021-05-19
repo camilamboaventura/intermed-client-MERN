@@ -62,7 +62,7 @@ function Login(props) {
 <div>
         {/* <label htmlFor="signupFormEmail">E-mail Address</label> */}
         <input
-        className="form-control bg-transparent placecolor"
+        className="form-control placecolor"
           type="email"
           name="email"
           id="signupFormEmail"
@@ -76,7 +76,7 @@ function Login(props) {
       <div>
         {/* <label htmlFor="signupFormPassword">Password</label> */}
         <input
-        className="form-control bg-transparent placecolor"
+        className="form-control placecolor"
           type="password"
           name="password"
           id="signupFormPassword"
@@ -91,7 +91,7 @@ function Login(props) {
 
 </div>
 
-<button type="submit" class="btn btn-outline-primary mt-4" style={{ marginLeft:"6rem"}}>Login</button>
+<button type="submit" class="btn btn-outline-danger mt-4" style={{ marginLeft:"6rem"}}>Login</button>
     </form>
     <div>
     

@@ -3,7 +3,7 @@ import UserCard from "./UserCard";
 import api from "../../apis/api";
 import NavbarLogged from "../../components/NavBarLogged"
 
-function UserFeed() {
+function AdminFeed() {
   const [users, setUsers] = useState({USER:[],DOCTOR:[],ADMIN:[]});
 
   useEffect(() => {
@@ -33,10 +33,10 @@ function UserFeed() {
   return (
     <div>
     <NavbarLogged/>
-    <h3>Our Patients:</h3>
+    <h3>Our Administration Team:</h3>
     <div className="row">
     
-      {users.USER.map((user) => {
+      {users.ADMIN.map((user) => {
         return (
           <div key={user._id} className="col-12 col-sm-4 col-md-3">
             <UserCard user={user} />
@@ -48,4 +48,4 @@ function UserFeed() {
   );
 }
 
-export default UserFeed;
+export default AdminFeed;
