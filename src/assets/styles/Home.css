@@ -57,14 +57,14 @@ a:active {
 }
 
 
-header {
+.homeHeader {
   width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-header::after {
+.homeHeader::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -74,26 +74,26 @@ header::after {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.intermed {
+.homeIntermed {
   position: absolute;
   top: calc(5%);
   max-width: 50%;
 }
 
-.alignIntermed {
+.alignHomeIntermed {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-section {
+.homeSection {
   width: 100%;
   height: auto;
   background-color: #e4e9f0;
   position: relative;
 }
 
-section .containerCss {
+.homeContainerCss {
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -103,17 +103,21 @@ section .containerCss {
   text-align: justify;
 }
 
-section .content {
+.homeContent {
   transform: translateY(-50px);
   margin-right: 2rem;
 }
 
-.imgContainer {
+.imgHomeContainer {
   transform: translateY(-50px);
   box-shadow: 0 0 10px 5px white;
 }
 
-.aboutTitle {
+.homeSection img {
+  max-width: 100%;
+}
+
+.aboutHomeTitle {
   /* padding-top: 6rem; */
   font-weight: 600;
   font-size: 1.5rem;
@@ -122,7 +126,7 @@ section .content {
   position: relative;
 }
 
-.border {
+.homeBorder {
   position: absolute;
   width: 20%;
   height: 3px;
@@ -131,17 +135,13 @@ section .content {
   left: 0;
 }
 
-.shadow {
+.homeShadow {
   position: absolute;
   bottom: 100%;
   height: 120px;
   width: 100%;
   left: 0;
   background: linear-gradient(to top, #e4e9f0, transparent);
-}
-
-section img {
-  max-width: 100%;
 }
 
 .rounded-circle{
