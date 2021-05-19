@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import api from "../../apis/api";
 import NavbarLogged from "../../components/NavBarLogged"
+import "../../assets/styles/AllPatients.css"
 
 function MedicalFeed() {
   const [users, setUsers] = useState({USER:[],DOCTOR:[],ADMIN:[]});
@@ -31,7 +32,7 @@ function MedicalFeed() {
   }, []);
 
   return (
-    <div>
+    <div className="allPatients">
     <NavbarLogged/>
     <h3>Our Medical Team:</h3>
     <div className="row">
