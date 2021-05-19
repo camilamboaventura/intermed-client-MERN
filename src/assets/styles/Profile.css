@@ -31,21 +31,21 @@
 }
 
 .card-img {
-  height: 15rem;
+  height: 13rem;
   width: auto;
 }
 
 .rounded {
   background-color: white;
-  width: 40rem;
-  height: 18rem;
+  width: 35rem;
+  height: 16rem;
 }
 
 .adress {
   background-color: white;
   border-radius: 5px;
-  width: 40rem;
-  height: 18rem;
+  width: 35rem;
+  height: 15rem;
 }
 
 li {

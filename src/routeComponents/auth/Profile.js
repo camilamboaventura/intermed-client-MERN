@@ -81,15 +81,15 @@ function Profile() {
             </div>
           </div>
 
-          <div className="d-flex justify-content-center align-items-center adress mt-5">
-            <div className="col justify-content-center align-center">
+          <div className="d-flex  align-items-center adress mt-5">
+            <div className="col justify-content-center align-center ml-5">
               <h2>Address Info</h2>
               <ul>
                 <li>
                   <strong>Post Code: </strong>
                   {state.address.postCode}
                 </li>
-                <br />
+
                 <li>
                   <strong>Street: </strong>
                   {state.address.street}
