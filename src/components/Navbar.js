@@ -1,8 +1,8 @@
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, NavLink, Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { useContext } from "react";
 import logo from "../assets/images/logo01.png";
-import "../assets/styles/Home.css"
+import "../assets/styles/Home.css";
 
 import { AuthContext } from "../contexts/authContext";
 
@@ -11,10 +11,13 @@ function Navbar() {
   const { _id } = loggedInUser.user;
   return (
     <div className="allNavbar">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparet">
+      <nav
+        className="navbar navbar-expand-lg navbar-dark bg-transparet"
+        style={{ zIndex: "5" }}
+      >
         <div className="ml-3">
           <NavLink className="navbar-brand" to="/main">
-          <img className="logo" src={logo} alt="logo" />
+            <img className="logo" src={logo} alt="logo" />
           </NavLink>
         </div>
 
@@ -30,43 +33,41 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse d-flex justify-content-between"
+          className="collapse navbar-collapse d-flex justify-content-end"
           id="navbarText"
         >
           <div className="mr-3">
             {loggedInUser.user.name ? (
-              <Dropdown>
-                <Dropdown.Toggle variant="transparent" id="dropdown-basic">
+              <div className="loginNavbar">
+                <Link to={`/profile/${_id}`} as={NavLink}>
+                  <text className="loginText">Profile</text>&nbsp; <text className="loginText">|</text>
+                </Link>
+                <Link
+                  onClick={(event) => {
+                    event.preventDefault();
+                    // Fazendo processo de Logout
+                    setLoggedInUser({ user: {}, token: "" });
+                    localStorage.removeItem("loggedInUser");
+                  }}
+                >
+                  &nbsp; <text className="loginText">Logout</text>
+                </Link>
+                <div variant="transparent">
+                  &nbsp; &nbsp;
                   <img
                     src={`https://ui-avatars.com/api/?name=${loggedInUser.user.name}&size=32&background=random`}
                     className="rounded-circle"
                     alt="Profile"
                   />
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item to={`/profile/${_id}`} as={NavLink}>
-                    Profile
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    onClick={(event) => {
-                      event.preventDefault();
-                      // Fazendo processo de Logout
-                      setLoggedInUser({ user: {}, token: "" });
-                      localStorage.removeItem("loggedInUser");
-                    }}
-                  >
-                    Logout
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                </div>
+              </div>
             ) : (
               <NavLink
                 className="nav-link text-white"
                 activeClassName="active"
                 to="/auth/login"
               >
-                Login
+                <text className="loginText">Login</text>
               </NavLink>
             )}
           </div>

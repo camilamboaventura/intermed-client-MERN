@@ -1,5 +1,5 @@
 .patientsFeed {
-  z-index: 2;
+  
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -7,7 +7,7 @@
 }
 
 .backgroundPic {
-  z-index: 1;
+  
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -18,7 +18,7 @@
 }
 
 .loginbackgroundPic {
-  z-index: 1;
+  
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -28,12 +28,52 @@
 }
 
 .createRecordBG{
-    background-image: url("../../assets/images/patientRecord.jpg");
-    height: auto;
+    background-image: url("../../assets/images/2patientRecord.png");
     width: 100vw;
+    height: auto;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
 
+}
+
+.loginPage{
+  background-image: url("../../assets/images/1loginBG.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+
+}
+
+.intermedLogin{
+  width: 18%;
+  
+}
+
+.intermedLogin{
+  position: absolute;
+  top: calc(5%);
+  max-width: 50%;
+}
+
+.alignLogoLogin{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.logoimageLogin{
+  margin-bottom: 42rem;
+}
+
+
+.placecolor::placeholder{
+  color:grey
 }

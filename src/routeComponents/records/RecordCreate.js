@@ -72,7 +72,7 @@ function RecordCreate() {
     <h1>New Patient's Record </h1>
 
 <hr />
-<form className="mb-5" onSubmit={handleSubmit}>
+<form onSubmit={handleSubmit}>
   <div className="form-group">
     <label htmlFor="recordFormDateOfVisit">Date of Visit</label>
     <input

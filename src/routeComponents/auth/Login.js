@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import api from "../../apis/api";
 import "../../assets/styles/PatientFeed.css"
-import background from "../../assets/images/loginBG.jpg"
 import { AuthContext } from "../../contexts/authContext";
+import intermed from "../../assets/images/logo2.png";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
@@ -43,47 +43,63 @@ function Login(props) {
   }
 
   return (
-    <div>
-<img src={background} className="loginbackgroundPic" alt="background" />
-<div className="patientsFeed">
+    <div className="loginPage">
+<div className="alignLogoLogin">
+<div className="logoimageLogin">
+<img
+              className="intermedLogin"
+              data-speed="0.6"
+              src={intermed}
+              alt="intermed"
+              style={{marginTop:"13rem", marginLeft:"2rem"}}
+            />
+</div>
+ <div style={{marginTop:"20rem"}}>
 <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+      
 
-<div className="card" style={{width: '18rem'}} >
+<div style={{width: '18rem'}} >
 <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
+        {/* <label htmlFor="signupFormEmail">E-mail Address</label> */}
         <input
+        className="form-control placecolor"
           type="email"
           name="email"
           id="signupFormEmail"
           value={state.email}
           error={errors.email}
           onChange={handleChange}
+          placeholder="Email"
         />
       </div>
 
       <div>
-        <label htmlFor="signupFormPassword">Password</label>
+        {/* <label htmlFor="signupFormPassword">Password</label> */}
         <input
+        className="form-control placecolor"
           type="password"
           name="password"
           id="signupFormPassword"
           value={state.password}
           error={errors.password}
           onChange={handleChange}
+          placeholder="Password"
         />
       </div>
 
-      <div>
-        <button type="submit">Login!</button>
-
-        
-      </div>
+     
 
 </div>
 
-      
+<button type="submit" class="btn btn-outline-danger mt-4" style={{ marginLeft:"6rem"}}>Login</button>
     </form>
+    <div>
+    
+        
+
+        
+      </div>
+    </div>
 </div>
 
 
