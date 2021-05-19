@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
-import NavbarLogged from "../../components/NavBarLogged"
+import NavbarLogged from "../../components/NavBarLogged";
+import "../../assets/styles/Profile.css";
 
 import api from "../../apis/api";
 
@@ -20,6 +21,7 @@ function Profile() {
     gender: "",
     user_pic: "",
     social_security_number: 0,
+    _id: "",
   });
 
   const { id } = useParams();
@@ -41,57 +43,77 @@ function Profile() {
   }, []);
 
   return (
-    <div>
-    <NavbarLogged/>
-      <img
-        className="card-img product-img mx-auto mt-2"
-        src={state.user_pic}
-        alt="user"
-      />
-      <div className="card-body">
-        <h4 className="card-title">
-          <small>{state.name}</small>
-        </h4>
+    <div className="allPage">
+      <NavbarLogged />
+      <div className="container mt-5">
+        <div className="container">
+          <div className="d-flex justify-content-start align-items-center rounded ">
+            <div className="col  img">
+              <img
+                className="card-img product-img mx-auto rounded-circle mt-2"
+                src={state.user_pic}
+                alt="user"
+              />
+            </div>
+            <div className="col">
+              <div className="card-body ">
+                <h4 className="card-title">
+                  <h3>{state.name}</h3>
+                </h4>
 
-        <p className="card-text">{state.social_security_number}</p>
+                <p className="mb-0">
+                  <strong>ID:</strong> {state._id}
+                </p>
 
-        <p className="mb-0">{state.gender}</p>
+                <p className="card-text mb-0">
+                  <strong>Social Security Number:</strong>{" "}
+                  {state.social_security_number}
+                </p>
+                <p className="mb-0">
+                  <strong>Gender:</strong> {state.gender}
+                </p>
 
-        <p>
-          <small>
-            Date of Birthday: {new Date(state.date_of_birth).toLocaleString()}
-          </small>
-        </p>
+                <p>
+                  <strong>Date of Birth: </strong>
+                  {new Date(state.date_of_birth).toLocaleString()}
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <h2>Address Info</h2>
-        <hr />
-
-        <ul>
-          <li>
-            <strong>Post Code: </strong>
-            {state.address.postCode}
-          </li>
-          <li>
-            <strong>Street: </strong>
-            {state.address.street}
-          </li>
-          <li>
-            <strong>Neighbourhood: </strong>
-            {state.address.neighbourhood}
-          </li>
-          <li>
-            <strong>City: </strong>
-            {state.address.city}
-          </li>
-          <li>
-            <strong>State or Province: </strong>
-            {state.address.stateOrProvince}
-          </li>
-          <li>
-            <strong>Country: </strong>
-            {state.address.country}
-          </li>
-        </ul>
+          <div className="d-flex justify-content-center align-items-center adress mt-5">
+            <div className="col justify-content-center align-center">
+              <h2>Address Info</h2>
+              <ul>
+                <li>
+                  <strong>Post Code: </strong>
+                  {state.address.postCode}
+                </li>
+                <br />
+                <li>
+                  <strong>Street: </strong>
+                  {state.address.street}
+                </li>
+                <li>
+                  <strong>Neighbourhood: </strong>
+                  {state.address.neighbourhood}
+                </li>
+                <li>
+                  <strong>City: </strong>
+                  {state.address.city}
+                </li>
+                <li>
+                  <strong>State or Province: </strong>
+                  {state.address.stateOrProvince}
+                </li>
+                <li>
+                  <strong>Country: </strong>
+                  {state.address.country}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
