@@ -25,7 +25,7 @@ function PatientFeed() {
     <div className="allPatients">
       <div>
       <NavbarLogged />
-      <div className="row">
+      <div className="row container">
         {patients.map((patient) => {
           return (
             <div key={patient._id} className="col-12 col-sm-4 col-md-3">
