@@ -1,15 +1,23 @@
 .product-img {
-    height: auto;
-    width: 50px;
-    object-fit: cover;
-  }
-  
-  .card-fixed-height {
-    height: 330px;
-    max-height: 330px;
-  }
-  
+  height: auto;
+  width: 50px;
+  object-fit: cover;
+}
 
-  .profile-pic{
-    width:10rem;
-  }
+.card-fixed-height {
+  height: 330px;
+  max-height: 330px;
+}
+
+.profile-pic {
+  width: 10rem;
+}
+
+/* .card-pic {
+  height: 5rem;
+  width: auto;
+}
+
+.user-card {
+  height: 100rem;
+} */

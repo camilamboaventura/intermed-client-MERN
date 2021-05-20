@@ -4,7 +4,6 @@ import { useParams, Link, useHistory } from "react-router-dom";
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
 import NavbarLogged from "../../components/NavBarLogged";
-import "./UsersCard.css";
 import "../../assets/styles/PatientDetail.css";
 
 function PatientDetails() {
