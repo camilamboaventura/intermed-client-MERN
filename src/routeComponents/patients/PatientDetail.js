@@ -70,8 +70,10 @@ function PatientDetails() {
           </Link>
         </div>
       ) : null}
+
       <div className="container" style={{minHeight:"85vh"}}>
         <div className="d-flex justify-content-start align-items-center box mt-2">
+
           <div className="col  img-patient">
             <img
               className="profile-pic rounded-circle"

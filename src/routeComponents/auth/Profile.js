@@ -47,7 +47,7 @@ function Profile() {
       <NavbarLogged />
       <div className="container mt-5">
         <div className="container">
-          <div className="d-flex justify-content-start align-items-center rounded ">
+          <div className="d-flex row justify-content-start align-items-center rounded ">
             <div className="col  img-profile">
               <img
                 className="card-img product-img mx-auto rounded-circle mt-2"
@@ -75,7 +75,7 @@ function Profile() {
 
                 <p>
                   <strong>Date of Birth: </strong>
-                  {new Date(state.date_of_birth).toLocaleString()}
+                  {new Date(state.date_of_birth).toLocaleDateString()}
                 </p>
               </div>
               <div className="adressProfile">
