@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import api from "../../apis/api";
 import NavbarLogged from "../../components/NavBarLogged"
 import UserForm from "./UserForm";
+import "../../assets/styles/AllPatients.css"
 
 function UserCreate() {
   const history = useHistory();
@@ -78,19 +79,23 @@ function UserCreate() {
   }
 
   return (
-    <div>
+    <div className="createUserPage">
     <NavbarLogged/>
-      <h1>New User </h1>
+      
+      <div className="container mt-3">
+      <h1>Create a New User </h1>
 
-      <hr />
+<hr />
 
-      <UserForm
-        state={state}
-        address={address}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        handleAddressChange={handleAddressChange}
-      />
+<UserForm
+  state={state}
+  address={address}
+  handleChange={handleChange}
+  handleSubmit={handleSubmit}
+  handleAddressChange={handleAddressChange}
+/>
+      </div>
+      
     </div>
   );
 }

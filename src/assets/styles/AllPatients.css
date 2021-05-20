@@ -6,3 +6,25 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+
+  .createUserPage{
+    background-image: url("../../assets/images/createUserBG1.png");
+    height: auto;
+    width: 100vw;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+
+  }
+
+  .newAppointment{
+    background-image: url("../../assets/images/newappointement.png");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+  }

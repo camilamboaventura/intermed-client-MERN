@@ -1,6 +1,6 @@
 function UserForm(props) {
   return (
-    <form className="mb-5" onSubmit={props.handleSubmit}>
+    <form className="p-4" onSubmit={props.handleSubmit}>
       <div className="form-group">
         <label htmlFor="userFormName">Name</label>
         <input
