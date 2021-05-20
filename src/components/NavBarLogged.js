@@ -1,10 +1,9 @@
 import { useParams, NavLink, Link, useHistory } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
 import { useContext } from "react";
 import React from "react";
 import { AuthContext } from "../contexts/authContext";
 import logo from "../assets/images/logo01.png";
-import "../assets/styles/NavBarLogged.css";
+import "../assets/styles/Home.css";
 
 function NavbarLogged() {
   const history = useHistory();
@@ -16,9 +15,10 @@ function NavbarLogged() {
     <div>
       {loggedInUser.user.role === "ADMIN" ? (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <NavLink className="navbar-brand" to="/main">
+          <NavLink className="navbar-brand m-2" to="/main">
             <img className="logo" src={logo} alt="logo" />
           </NavLink>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -30,34 +30,40 @@ function NavbarLogged() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-collapse d-flex justify-content-end">
-              <li className="nav-item active">
+            <ul className="navbar-collapse d-flex justify-content-end m-2">
+              <li className="nav-item active loginText">
                 <Link
                   className="nav-link loginText"
                   to={`/profile/${loggedUser._id}`}
                 >
-                  My Profile
+                  <text className="loginText">Profile</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link loginText" to="/signup">
-                  Create New User
+                <Link to="/signup">
+                <text className="loginText">Create New User</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link loginText" to="/admins">
-                  Administation Team
+                <text className="loginText">Administation Team</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link loginText" to="/doctors">
-                  Medical Team
+                <Link className=" loginText" to="/doctors">
+                <text className="loginText">Medical Team</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link loginText" to="/users">
-                  Pacients
+                <text className="loginText">Patients</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li>
@@ -71,7 +77,7 @@ function NavbarLogged() {
                       history.push("/main");
                     }}
                   >
-                    &nbsp; <text className="loginText">Logout</text>
+                    &nbsp;<text className="loginText">Logout</text>
                   </Link>
                 ) : null}
               </li>
@@ -81,9 +87,10 @@ function NavbarLogged() {
       ) : null}
       {loggedInUser.user.role === "DOCTOR" ? (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <NavLink className="navbar-brand" to="/main">
+          <NavLink className="navbar-brand m-2" to="/main">
             <img className="logo" src={logo} alt="logo" />
           </NavLink>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -95,24 +102,28 @@ function NavbarLogged() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-collapse d-flex justify-content-end">
+            <ul className="navbar-collapse d-flex justify-content-end m-2">
               <li className="nav-item active">
                 <Link
-                  className="nav-link loginText"
+                  className=" loginText"
                   to={`/profile/${loggedUser._id}`}
                 >
-                  My Profile
+                  <text className="loginText">Profile</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link loginText" to="/patients">
-                  Patients
+                <text className="loginText">Patients</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link loginText" to="/patients">
-                  Appoitments
+                <Link className="loginText" to="/patients">
+                  <text className="loginText">Appointments</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li>
@@ -126,7 +137,7 @@ function NavbarLogged() {
                       history.push("/main");
                     }}
                   >
-                    &nbsp; <text className="loginText">Logout</text>
+                    &nbsp; &nbsp;<text className="loginText">Logout</text>
                   </Link>
                 ) : null}
               </li>
@@ -136,9 +147,10 @@ function NavbarLogged() {
       ) : null}
       {loggedInUser.user.role === "USER" ? (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <NavLink className="navbar-brand" to="/main">
+          <NavLink className="navbar-brand m-2" to="/main">
             <img className="logo" src={logo} alt="logo" />
           </NavLink>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -150,14 +162,13 @@ function NavbarLogged() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-collapse d-flex justify-content-end">
+            <ul className="navbar-collapse d-flex justify-content-end m-2">
               <li className="nav-item active">
-                <Link
-                  className="nav-link loginText"
-                  to={`/profile/${loggedUser._id}`}
-                >
-                  My Profile
+                <Link className="" to={`/profile/${loggedUser._id}`}>
+                  <text className="loginText">Profile</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
@@ -165,12 +176,14 @@ function NavbarLogged() {
                   className="nav-link loginText"
                   to={`/patient/${loggedUser._id}/records`}
                 >
-                  My Records
+                  <text className="loginText">Records</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link loginText" to="/books">
-                  Appointments
+                <Link className="loginText" to="/books">
+                  <text className="loginText">Appointments</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
               </li>
               <li>
@@ -184,7 +197,7 @@ function NavbarLogged() {
                       history.push("/main");
                     }}
                   >
-                    &nbsp; <text className="loginText">Logout</text>
+                    &nbsp; &nbsp;<text className="loginText">Logout</text>
                   </Link>
                 ) : null}
               </li>
