@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import NavbarLogged from "../../components/NavBarLogged";
+import "../../assets/styles/AllPatients.css"
 
 
 import api from "../../apis/api";
@@ -71,60 +72,67 @@ function ConsultationCreate() {
   
 console.log(doctors)
   return (
-    <div>
+    <div className="newAppointment">
     <NavbarLogged />
-      <h1>New Appoitment </h1>
+      
+      <div className="container mt-3">
 
-      <hr/>
+      <h1>New Appointment </h1>
 
-
-      <form className="mb-5" onSubmit={handleSubmit}>
-  <div className="form-group">
-    <label htmlFor="formDateOfAppointment">Date of Appoitment</label>
-    <input
-      type="date"
-      className="form-control "
-      id="formDateOfAppointment"
-      name="date_of_appointment"
-      onChange={handleChange}
-      value={state.date_of_appointment}
-    />
-  </div>
-
-  <div className="form-group">
-    <label htmlFor="formTimeOfAppointment">Time of Appoitment</label>
-    <input
-      type="text"
-      className="form-control "
-      id="formTimeOfAppointment"
-      name="time_of_appointment"
-      onChange={handleChange}
-      value={state.time_of_appointment}
-    />
-  </div>
+<hr/>
 
 
-  <div className="input-group mb-3">
-  <div className="input-group-prepend">
-    <label className="input-group-text" htmlFor="inputGroupSelect01">Doctor</label>
-  </div>
-  <select className="custom-select" id="inputGroupSelect01" onChange={handleChange} value={state.doctor_id}>
-  
-    {doctors.map((doctor)=>{
-
-      <option key={doctor._id} value={doctor._id}>{doctor.name}</option>
-    })}
-    
-  </select>
+<form onSubmit={handleSubmit}>
+<div className="form-group">
+<label htmlFor="formDateOfAppointment">Date of Appointment</label>
+<input
+type="date"
+className="form-control "
+id="formDateOfAppointment"
+name="date_of_appointment"
+onChange={handleChange}
+value={state.date_of_appointment}
+/>
 </div>
-  
 
-  <hr />
-  <button type="submit" className="btn btn-primary mb-5">
-    Submit
-  </button>
+<div className="form-group">
+<label htmlFor="formTimeOfAppointment">Time of Appointment</label>
+<input
+type="text"
+className="form-control "
+id="formTimeOfAppointment"
+name="time_of_appointment"
+onChange={handleChange}
+value={state.time_of_appointment}
+/>
+</div>
+
+
+<div className="input-group mb-3">
+<div className="input-group-prepend">
+<label className="input-group-text" htmlFor="inputGroupSelect01">Doctor</label>
+</div>
+<select className="custom-select" id="inputGroupSelect01" onChange={handleChange} value={state.doctor_id}>
+
+{doctors.map((doctor)=>{
+
+<option key={doctor._id} value={doctor._id}>{doctor.name}</option>
+})}
+
+</select>
+</div>
+
+
+<hr />
+<button type="submit" className="btn btn-primary mb-5">
+Submit
+</button>
 </form>
 
+
+      </div>
+      
+      
 
      
       
