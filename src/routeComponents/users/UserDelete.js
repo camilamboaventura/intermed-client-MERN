@@ -12,7 +12,7 @@ function UserDelete() {
       try {
         const response = await api.delete(`/users/${id}`);
 
-        history.push("/users");
+        history.push("/");
       } catch (err) {
         console.error(err);
       }

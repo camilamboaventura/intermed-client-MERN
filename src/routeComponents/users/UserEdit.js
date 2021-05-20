@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import api from "../../apis/api";
 import UserForm from "./UserForm";
+import NavbarLogged from "../../components/NavBarLogged"
+import "../../assets/styles/AllPatients.css"
 
 function UserEdit() {
   const [state, setState] = useState({
@@ -86,7 +88,11 @@ function UserEdit() {
     }
   }
   return (
-    <div>
+    <div className="createUserPage">
+    <NavbarLogged/>
+      
+      
+      <div className="container mt-3">
       <h1>Edit User</h1>
       <hr />
       <UserForm
@@ -96,6 +102,11 @@ function UserEdit() {
         handleSubmit={handleSubmit}
         handleAddressChange={handleAddressChange}
       />
+
+      </div>
+      
+      
+      
     </div>
   );
 }
