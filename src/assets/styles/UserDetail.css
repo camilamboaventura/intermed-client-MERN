@@ -1,0 +1,39 @@
+.allContent {
+  background-image: url("../../assets/images/background-logo.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.photo {
+  height: 13rem;
+  width: auto;
+}
+
+.profile-box {
+  background-color: white;
+  border-radius: 5px;
+  width: 38rem;
+  height: 16rem;
+}
+
+.img-profile {
+  /* margin-right: 20rem; */
+  margin-left: 10px;
+}
+
+.adressBox {
+  background-color: white;
+  border-radius: 5px;
+  width: 38rem;
+  height: 15rem;
+}
+
+.addressPatient {
+  margin-left: 12rem;
+}
+
+.buttonConfig {
+}
