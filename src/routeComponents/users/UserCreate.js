@@ -48,7 +48,7 @@ function UserCreate() {
       uploadData.append("image", file);
 
       const response = await api.post("/image-upload", uploadData);
-
+      console.log(response)
       return response.data.fileUrl;
     } catch (err) {
       console.error(err);
