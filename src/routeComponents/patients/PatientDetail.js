@@ -70,7 +70,7 @@ function PatientDetails() {
         </div>
       ) : null}
       <div className="container">
-        <div className="d-flex justify-content-start align-items-center box mt-2">
+        <div className="row d-flex justify-content-start align-items-center box mt-2">
           <div className="col  img-patient">
             <img
               className="profile-pic rounded-circle"

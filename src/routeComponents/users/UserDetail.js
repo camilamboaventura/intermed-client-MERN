@@ -70,7 +70,7 @@ function UserDetail() {
           </div>
         ) : null}
         <div className="profile-box mt-3">
-          <div className="d-flex justify-content-between align-items-center ">
+          <div className=" row d-flex justify-content-between align-items-center ">
             <div className="col img-profile">
               <img
                 className="card-img  mx-auto mt-2  photo rounded-circle"

@@ -18,12 +18,12 @@
 }
 
 .img-profile {
-  margin-right: -320px;
+  margin-right: -20rem;
 }
 
 .card-img {
-  height: 13rem;
-  width: auto;
+  max-height: 15rem;
+  width: 8rem;
 }
 
 .rounded {
