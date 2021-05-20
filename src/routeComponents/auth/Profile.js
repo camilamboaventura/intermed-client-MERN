@@ -78,39 +78,38 @@ function Profile() {
                   {new Date(state.date_of_birth).toLocaleString()}
                 </p>
               </div>
-            </div>
-          </div>
+              <div className="adressProfile">
+                <h5>
+                  <strong>Address Information</strong>
+                </h5>
+                <ul>
+                  <li>
+                    <strong>Post Code: </strong>
+                    {state.address.postCode}
+                  </li>
 
-          <div className="d-flex  align-items-center adress mt-4">
-            <div className="col justify-content-center align-center ml-5">
-              <h2>Address Information</h2>
-              <ul>
-                <li>
-                  <strong>Post Code: </strong>
-                  {state.address.postCode}
-                </li>
-
-                <li>
-                  <strong>Street: </strong>
-                  {state.address.street}
-                </li>
-                <li>
-                  <strong>Neighbourhood: </strong>
-                  {state.address.neighbourhood}
-                </li>
-                <li>
-                  <strong>City: </strong>
-                  {state.address.city}
-                </li>
-                <li>
-                  <strong>State or Province: </strong>
-                  {state.address.stateOrProvince}
-                </li>
-                <li>
-                  <strong>Country: </strong>
-                  {state.address.country}
-                </li>
-              </ul>
+                  <li>
+                    <strong>Street: </strong>
+                    {state.address.street}
+                  </li>
+                  <li>
+                    <strong>Neighbourhood: </strong>
+                    {state.address.neighbourhood}
+                  </li>
+                  <li>
+                    <strong>City: </strong>
+                    {state.address.city}
+                  </li>
+                  <li>
+                    <strong>State or Province: </strong>
+                    {state.address.stateOrProvince}
+                  </li>
+                  <li>
+                    <strong>Country: </strong>
+                    {state.address.country}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

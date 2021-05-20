@@ -4,7 +4,7 @@
   width: 100vw;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .photo {
@@ -15,8 +15,9 @@
 .profile-box {
   background-color: white;
   border-radius: 5px;
-  width: 38rem;
-  height: 16rem;
+  width: 40rem;
+  height: auto;
+  padding-bottom: 2rem;
 }
 
 .img-profile {
@@ -24,16 +25,26 @@
   margin-left: 10px;
 }
 
-.adressBox {
+/* .adressBox {
   background-color: white;
   border-radius: 5px;
   width: 38rem;
   height: 15rem;
+} */
+
+.buttonConfig {
+  margin-top: 2rem;
+  margin-right: 15rem;
+}
+
+.adress {
+  margin-top: -2rem;
 }
 
 .addressPatient {
-  margin-left: 12rem;
+  margin-left: 1rem;
 }
 
-.buttonConfig {
+.buttonDelete {
+  margin-left: 1rem;
 }

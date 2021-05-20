@@ -7,9 +7,7 @@
   color: grey;
 }
 
-
 .allSection {
-
   /* overflow-x: hidden; */
   background-image: url("../../assets/images/hospital-background-2.jpg");
   height: 100vh;
@@ -20,7 +18,7 @@
 }
 
 .img-profile {
-  margin-right: -250px;
+  margin-right: -320px;
 }
 
 .card-img {
@@ -30,17 +28,22 @@
 
 .rounded {
   background-color: white;
-  width: 32rem;
-  height: 16rem;
+  width: 44rem;
+  height: auto;
+  padding-bottom: 2rem;
 }
 
-.adress {
+/* .adress {
   background-color: white;
   border-radius: 5px;
   width: 32rem;
   height: 15rem;
-}
+} */
 
 li {
   list-style-type: none;
+}
+
+.adressProfile {
+  margin-left: 1rem;
 }
