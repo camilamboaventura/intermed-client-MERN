@@ -110,7 +110,7 @@ a:active {
 
 .imgHomeContainer {
   transform: translateY(-50px);
-  box-shadow: 0 0 10px 5px white;
+  /* box-shadow: 0 0 10px 5px white; */
 }
 
 .homeSection img {
