@@ -38,7 +38,7 @@ function Home() {
                 About Us
                 <div className="homeBorder"></div>
               </h3>
-              <p className="text">
+              <p className="homeText">
                 Intermed is an end to end health care software to
                 record, organize, manage and retrieve data related to all
                 departments such as Clinical, Medical Records, Book Appoitments,
