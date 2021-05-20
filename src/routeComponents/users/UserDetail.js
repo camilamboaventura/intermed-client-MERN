@@ -5,6 +5,7 @@ import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
 import ConfirmationModal from "../../components/ConfirmationModal";
 import NavbarLogged from "../../components/NavBarLogged";
+import "../../assets/styles/AllPatients.css";
 
 function UserDetail() {
   const [state, setState] = useState({
@@ -47,9 +48,10 @@ function UserDetail() {
   }, [id]);
 
   return (
-    <div className="allContent">
+    <div className="vh-100">
+      <div className="allPage" >
       <NavbarLogged />
-      <div className="container">
+      <div className="container" style={{ minHeight: "85vh" }}>
         {loggedInUser.user.role === "ADMIN" ? (
           <div className="row d-flex justify-content-end buttonConfig">
             <div className="">
@@ -151,6 +153,7 @@ function UserDetail() {
           <p>This action is irreversible. To confirm, click "Confirm".</p>
         </ConfirmationModal>
       </div>
+    </div>
     </div>
   );
 }

@@ -32,9 +32,10 @@ function AdminFeed() {
   }, []);
 
   return (
-    <div className="allPatients">
+    <div className="vh-100">
+      <div className="allPatients">
       <NavbarLogged />
-      <div className="container">
+      <div className="container" style={{ minHeight: "85vh" }}>
         <h3 className="mt-5">Our Administration Team:</h3>
         <div className="row">
           {users.ADMIN.map((user) => {
@@ -46,6 +47,7 @@ function AdminFeed() {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 }

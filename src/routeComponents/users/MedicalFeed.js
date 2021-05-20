@@ -34,7 +34,7 @@ function MedicalFeed() {
   return (
     <div className="allPatients">
       <NavbarLogged />
-      <div className="container">
+      <div className="container" style={{ minHeight: "85vh" }}>
         <h3 className="mt-5 mb-5">Our Medical Team:</h3>
         <div className="row">
           {users.DOCTOR.map((user) => {
