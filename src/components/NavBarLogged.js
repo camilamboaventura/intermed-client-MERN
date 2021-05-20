@@ -154,7 +154,7 @@ function NavbarLogged() {
             <ul className="navbar-collapse d-flex justify-content-end">
               <li className="nav-item active">
                 <Link
-                  className="nav-link navText"
+                  className="nav-link loginText"
                   to={`/profile/${loggedUser._id}`}
                 >
                   My Profile
@@ -162,15 +162,15 @@ function NavbarLogged() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link navText"
+                  className="nav-link loginText"
                   to={`/patient/${loggedUser._id}/records`}
                 >
                   My Records
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link navText" to="/books">
-                  Appoitments
+                <Link className="nav-link loginText" to="/books">
+                  Appointments
                 </Link>
               </li>
               <li>

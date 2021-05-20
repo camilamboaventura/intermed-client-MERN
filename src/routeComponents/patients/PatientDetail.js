@@ -60,14 +60,17 @@ function PatientDetails() {
     <div className="allPage">
       <NavbarLogged />
       {loggedInUser.user.role === "DOCTOR" ? (
-        <div className="row d-flex justify-content-end">
-          <Link to={`/patients/record/${id}`} className="btn btn-warning mr-3">
+        <div className="row d-flex justify-content-end buttonCreate">
+          <Link
+            to={`/patients/record/${id}`}
+            className="btn btn-outline-success"
+          >
             Create Record
           </Link>
         </div>
       ) : null}
       <div className="container">
-        <div className="d-flex justify-content-start align-items-center box ">
+        <div className="d-flex justify-content-start align-items-center box mt-2">
           <div className="col  img-patient">
             <img
               className="profile-pic rounded-circle"
@@ -75,12 +78,12 @@ function PatientDetails() {
               alt="user"
             />
           </div>
-          <div>
+          <div className="col ">
             <h3>
               <strong>{state.name}</strong>
             </h3>
             <p className="mb-0">
-              <strong>Patient ID:</strong>Patient ID: {state._id}
+              <strong>Patient ID:</strong> {state._id}
             </p>
             <p className="mb-0">
               <strong>Social Secutiry Number:</strong>{" "}
@@ -93,39 +96,39 @@ function PatientDetails() {
               <strong>Date of Birthday: </strong>
               {new Date(state.date_of_birth).toLocaleDateString()}
             </p>
-          </div>
-        </div>
 
-        <div className="d-flex  align-items-center adressInfo mt-4">
-          <div className="col addressPatient">
-            <h3>Address Information</h3>
-            <ul>
-              <li>
-                <strong>Post Code: </strong>
-                {state.address.postCode}
-              </li>
+            <div className=" addressPat">
+              <h5>
+                <strong>Address Information</strong>
+              </h5>
+              <ul>
+                <li>
+                  <strong>Post Code: </strong>
+                  {state.address.postCode}
+                </li>
 
-              <li>
-                <strong>Street: </strong>
-                {state.address.street}
-              </li>
-              <li>
-                <strong>Neighbourhood: </strong>
-                {state.address.neighbourhood}
-              </li>
-              <li>
-                <strong>City: </strong>
-                {state.address.city}
-              </li>
-              <li>
-                <strong>State or Province: </strong>
-                {state.address.stateOrProvince}
-              </li>
-              <li>
-                <strong>Country: </strong>
-                {state.address.country}
-              </li>
-            </ul>
+                <li>
+                  <strong>Street: </strong>
+                  {state.address.street}
+                </li>
+                <li>
+                  <strong>Neighbourhood: </strong>
+                  {state.address.neighbourhood}
+                </li>
+                <li>
+                  <strong>City: </strong>
+                  {state.address.city}
+                </li>
+                <li>
+                  <strong>State or Province: </strong>
+                  {state.address.stateOrProvince}
+                </li>
+                <li>
+                  <strong>Country: </strong>
+                  {state.address.country}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="recordBox">

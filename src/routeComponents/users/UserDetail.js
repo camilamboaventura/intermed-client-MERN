@@ -51,92 +51,94 @@ function UserDetail() {
       <NavbarLogged />
       <div className="container">
         {loggedInUser.user.role === "ADMIN" ? (
-          <div className="row d-flex justify-content-end">
-            <Link
-              to={`/users/edit/${id}`}
-              className="btn btn-outline-success buttonConfig"
-            >
-              Edit
-            </Link>
+          <div className="row d-flex justify-content-end buttonConfig">
+            <div className="">
+              <Link
+                to={`/users/edit/${id}`}
+                className="btn btn-outline-success "
+              >
+                Edit
+              </Link>
+            </div>
             {/* Abrimos um modal de confirmação antes de deletar o produto */}
             <button
-              className="btn btn-outline-danger"
+              className="btn btn-outline-danger buttonDelete"
               onClick={() => setShowModal(true)}
             >
               Delete
             </button>
           </div>
         ) : null}
-        <div className="d-flex justify-content-start align-items-center profile-box">
-          <div className="col img-profile">
-            <img
-              className="card-img product-img mx-auto mt-2 photo rounded-circle"
-              src={state.user_pic}
-              alt="user"
-            />
-          </div>
-          <div className="col ml-5">
-            <div className="card-body">
-              <h3 className="card-title">
-                <strong>{state.name}</strong>
-              </h3>
-
-              <p className="card-text mb-0">
-                <strong>Social Security Number: </strong>
-                {state.social_security_number}
-              </p>
-
-              <p className="mb-0">
-                <strong>Gender:</strong> {state.gender}
-              </p>
-
-              <p className="mb-0">
-                <strong>Role:</strong> {state.role}
-              </p>
-              {state.role === "DOCTOR" ? (
-                <p className="mb-0">
-                  <strong>Medical Specialty:</strong> {state.medical_specialty}
-                </p>
-              ) : null}
-
-              <p>
-                <strong>Date of Birthday: </strong>
-                {new Date(state.date_of_birth).toLocaleDateString()}
-              </p>
+        <div className="profile-box mt-3">
+          <div className="d-flex justify-content-start align-items-center ">
+            <div className="col img-profile">
+              <img
+                className="card-img product-img mx-auto mt-2 photo rounded-circle"
+                src={state.user_pic}
+                alt="user"
+              />
             </div>
-          </div>
-        </div>
+            <div className="col ">
+              <div className="card-body">
+                <h3 className="card-title">
+                  <strong>{state.name}</strong>
+                </h3>
 
-        <div className="d-flex  align-items-center adressBox mt-4">
-          <div className="col addressPatient">
-            <h2>Address Info</h2>
+                <p className="card-text mb-0">
+                  <strong>Social Security Number: </strong>
+                  {state.social_security_number}
+                </p>
 
-            <ul>
-              <li>
-                <strong>Post Code: </strong>
-                {state.address.postCode}
-              </li>
-              <li>
-                <strong>Street: </strong>
-                {state.address.street}
-              </li>
-              <li>
-                <strong>Neighbourhood: </strong>
-                {state.address.neighbourhood}
-              </li>
-              <li>
-                <strong>City: </strong>
-                {state.address.city}
-              </li>
-              <li>
-                <strong>State or Province: </strong>
-                {state.address.stateOrProvince}
-              </li>
-              <li>
-                <strong>Country: </strong>
-                {state.address.country}
-              </li>
-            </ul>
+                <p className="mb-0">
+                  <strong>Gender:</strong> {state.gender}
+                </p>
+
+                {state.role === "DOCTOR" ? (
+                  <p className="mb-0">
+                    <strong>Medical Specialty:</strong>{" "}
+                    {state.medical_specialty}
+                  </p>
+                ) : null}
+
+                <p>
+                  <strong>Date of Birthday: </strong>
+                  {new Date(state.date_of_birth).toLocaleDateString()}
+                </p>
+              </div>
+
+              <div className="addressPatient">
+                <h5>
+                  <strong>Address Information</strong>
+                </h5>
+
+                <ul>
+                  <li>
+                    <strong>Post Code: </strong>
+                    {state.address.postCode}
+                  </li>
+                  <li>
+                    <strong>Street: </strong>
+                    {state.address.street}
+                  </li>
+                  <li>
+                    <strong>Neighbourhood: </strong>
+                    {state.address.neighbourhood}
+                  </li>
+                  <li>
+                    <strong>City: </strong>
+                    {state.address.city}
+                  </li>
+                  <li>
+                    <strong>State or Province: </strong>
+                    {state.address.stateOrProvince}
+                  </li>
+                  <li>
+                    <strong>Country: </strong>
+                    {state.address.country}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
