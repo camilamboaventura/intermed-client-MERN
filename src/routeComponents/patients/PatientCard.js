@@ -10,13 +10,13 @@ function PatientCard(props) {
     >
       <div
         className="card text-dark shadow rounded border-0 m-3 "
-        style={{ width: "100%" }}
+        style={{ width: "100%", height: "90%"}}
       >
         <img
           className="card-img product-img mx-auto mt-2 pt-4  "
           src={props.patient.user_pic}
           alt="patient"
-          style={{ maxWidth: "8rem" }}
+          style={{ maxWidth: "8rem", minWidth:"8rem" }}
         />
         <div className="card-body" style={{ textAlign: "center" }}>
           <h4 className="card-text">
