@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
 import UserCard from "./UserCard";
 import api from "../../apis/api";
-import NavbarLogged from "../../components/NavBarLogged"
-import "../../assets/styles/AllPatients.css"
+import NavbarLogged from "../../components/NavBarLogged";
+import "../../assets/styles/AllPatients.css";
 
 function MedicalFeed() {
-  const [users, setUsers] = useState({USER:[],DOCTOR:[],ADMIN:[]});
+  const [users, setUsers] = useState({ USER: [], DOCTOR: [], ADMIN: [] });
 
   useEffect(() => {
     async function fetchUsers() {
       try {
         const response = await api.get("/users");
-        const auxObj = {USER:[],DOCTOR:[],ADMIN:[]}
-        response.data.map((user)=>{
-          if(user.role === "USER"){
-            auxObj.USER.push(user)
+        const auxObj = { USER: [], DOCTOR: [], ADMIN: [] };
+        response.data.map((user) => {
+          if (user.role === "USER") {
+            auxObj.USER.push(user);
           }
-          if(user.role === "DOCTOR"){
-            auxObj.DOCTOR.push(user)
+          if (user.role === "DOCTOR") {
+            auxObj.DOCTOR.push(user);
           }
-          if(user.role === "ADMIN"){
-            auxObj.ADMIN.push(user)
+          if (user.role === "ADMIN") {
+            auxObj.ADMIN.push(user);
           }
-        })
-        setUsers({...auxObj});
+        });
+        setUsers({ ...auxObj });
       } catch (err) {
         console.error(err);
       }
@@ -33,18 +33,19 @@ function MedicalFeed() {
 
   return (
     <div className="allPatients">
-    <NavbarLogged/>
-    <h3>Our Medical Team:</h3>
-    <div className="row">
-    
-      {users.DOCTOR.map((user) => {
-        return (
-          <div key={user._id} className="col-12 col-sm-4 col-md-3">
-            <UserCard user={user} />
-          </div>
-        );
-      })}
-    </div>
+      <NavbarLogged />
+      <div className="container">
+        <h3 className="mt-5 mb-5">Our Medical Team:</h3>
+        <div className="row">
+          {users.DOCTOR.map((user) => {
+            return (
+              <div key={user._id} className="col-12 col-sm-4 col-md-3">
+                <UserCard user={user} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
