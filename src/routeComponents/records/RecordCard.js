@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import "../patients/UsersCard.css";
+// import "../patients/UsersCard.css";
 
 function RecordCard(props) {
   console.log(props);
   return (
     <div>
-      <h2>
+      <h4>
         Record Information of{" "}
         {new Date(props.date_of_visit).toLocaleDateString()}
-      </h2>
+      </h4>
       <hr />
       <strong>Doctor: </strong>
       {props.created_by.name} <br />

@@ -70,15 +70,15 @@ function UserDetail() {
           </div>
         ) : null}
         <div className="profile-box mt-3">
-          <div className="d-flex justify-content-start align-items-center ">
+          <div className="d-flex justify-content-between align-items-center ">
             <div className="col img-profile">
               <img
-                className="card-img product-img mx-auto mt-2 photo rounded-circle"
+                className="card-img  mx-auto mt-2  photo rounded-circle"
                 src={state.user_pic}
                 alt="user"
               />
             </div>
-            <div className="col ">
+            <div className="col userInfo">
               <div className="card-body">
                 <h3 className="card-title">
                   <strong>{state.name}</strong>
