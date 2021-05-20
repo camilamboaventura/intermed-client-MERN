@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
-
+import NavbarLogged from "../../components/NavBarLogged"
 import UserForm from "./UserForm";
 
 function UserCreate() {
@@ -79,6 +79,7 @@ function UserCreate() {
 
   return (
     <div>
+    <NavbarLogged/>
       <h1>New User </h1>
 
       <hr />

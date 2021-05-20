@@ -4,16 +4,18 @@ import "./UsersCard.css";
 function PatientCard(props) {
   console.log(props)
   return (
+    <Link
+    className="text-decoration-none "
+    key={props.patient._id}
+    to={`/patients/${props.patient._id}`}
+  >
+    
     <div
     className="card card-fixed-height text-dark shadow rounded border-0 m-2 "
     style={{ width: "100%" }}
   >
     
-    <Link
-      className="text-decoration-none "
-      key={props.patient._id}
-      to={`/patients/${props.patient._id}`}
-    >
+
         <img
           className="card-img product-img mx-auto mt-2"
           src={props.patient.user_pic}
@@ -25,17 +27,22 @@ function PatientCard(props) {
           </h4>
 
           <p className="mb-0">
-            <small className="card-text">{new Date(props.patient.date_of_birth).toLocaleDateString()}</small>
+            <small className="card-text">
+              {new Date(props.patient.date_of_birth).toLocaleDateString()}
+            </small>
           </p>
 
           <p className="card-text mb-0">
             <small>{props.patient.gender}</small>
           </p>
         </div>
-    </Link>
+    
       </div>
+      </Link>
   );
 }
 
+
 export default PatientCard;
+
 

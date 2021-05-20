@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import NavbarLogged from "../../components/NavBarLogged";
+
 
 import api from "../../apis/api";
 
@@ -16,8 +18,11 @@ function ConsultationCreate() {
   
   });
 
-
-
+  const [doctors, setDoctors] = useState(
+   []
+  
+  );
+  const [isBusy, setBusy] = useState(true)
 
 
   function handleChange(event) {
@@ -47,8 +52,27 @@ function ConsultationCreate() {
     }
   }
 
+  useEffect(() => {
+    async function fetchRecords() {
+      try {
+        const response = await api.get("/doctors");
+        console.log(response);
+        setDoctors([...response.data]);
+        setBusy(false)
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchRecords();
+  }, [isBusy]);
+
+
+  
+  
+console.log(doctors)
   return (
     <div>
+    <NavbarLogged />
       <h1>New Appoitment </h1>
 
       <hr/>
@@ -80,30 +104,19 @@ function ConsultationCreate() {
   </div>
 
 
-  <div className="form-group">
-    <label htmlFor="formConsultationDoctor">Doctor</label>
-    <input
-      type="text"
-      className="form-control"
-      id="formConsultationDoctor"
-      name="doctor_id"
-      onChange={handleChange}
-      value={state.doctor_id}
-    />
+  <div className="input-group mb-3">
+  <div className="input-group-prepend">
+    <label className="input-group-text" htmlFor="inputGroupSelect01">Doctor</label>
   </div>
+  <select className="custom-select" id="inputGroupSelect01" onChange={handleChange} value={state.doctor_id}>
+  
+    {doctors.map((doctor)=>{
 
-  <div className="form-group">
-    <label htmlFor="formConsultationPatient">Patient</label>
-    <input
-      type="text"
-      className="form-control"
-      id="formConsultationPatient"
-      name="patient_id"
-      onChange={handleChange}
-      value={state.patient_id}
-    />
-  </div>
-
+      <option key={doctor._id} value={doctor._id}>{doctor.name}</option>
+    })}
+    
+  </select>
+</div>
   
 
   <hr />

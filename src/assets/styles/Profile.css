@@ -8,8 +8,8 @@
 }
 
 
+.allSection {
 
-.allPage {
   /* overflow-x: hidden; */
   background-image: url("../../assets/images/hospital-background-2.jpg");
   height: 100vh;
@@ -19,8 +19,8 @@
   background-repeat: no-repeat;
 }
 
-.img {
-  margin-right: -200px;
+.img-profile {
+  margin-right: -250px;
 }
 
 .card-img {
@@ -30,14 +30,14 @@
 
 .rounded {
   background-color: white;
-  width: 35rem;
+  width: 32rem;
   height: 16rem;
 }
 
 .adress {
   background-color: white;
   border-radius: 5px;
-  width: 35rem;
+  width: 32rem;
   height: 15rem;
 }
 

@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  outline: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: grey;
+}
+
+.allPage {
+  /* overflow-x: hidden; */
+  background-image: url("../../assets/images/background-logo.png");
+  height: auto;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-pic {
+  height: 13rem;
+  width: auto;
+}
+
+.box {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+  height: 16rem;
+}
+
+.img-patient {
+  margin-right: -450px;
+  margin-left: 20px;
+}
+
+.adressInfo {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+  height: 15rem;
+}
+
+.addressPatient {
+  margin-left: 12rem;
+}
+
+.recordInfo {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+}
+
+.recordRows {
+  padding-top: 2rem;
+  padding-left: 7rem;
+  padding-bottom: 2rem;
+}
+
+.recordBox {
+  padding-bottom: 5rem;
+}

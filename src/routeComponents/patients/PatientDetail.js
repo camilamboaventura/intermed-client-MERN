@@ -5,7 +5,7 @@ import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
 import NavbarLogged from "../../components/NavBarLogged";
 import "./UsersCard.css";
-import "../../assets/styles/PatientFeed.css"
+import "../../assets/styles/PatientDetail.css";
 
 function PatientDetails() {
   const [state, setState] = useState({
@@ -58,8 +58,8 @@ function PatientDetails() {
   }, [id]);
 
   return (
-    <div>
-    <NavbarLogged/>
+    <div className="allPage">
+      <NavbarLogged />
       {loggedInUser.user.role === "DOCTOR" ? (
         <div className="row d-flex justify-content-end">
           <Link to={`/patients/record/${id}`} className="btn btn-warning mr-3">
@@ -67,104 +67,115 @@ function PatientDetails() {
           </Link>
         </div>
       ) : null}
-      <img className="profile-pic" src={state.user_pic} alt="user" />
-      <div>
-        <h4>
-          <small>{state.name}</small>
-        </h4>
+      <div className="container">
+        <div className="d-flex justify-content-start align-items-center box ">
+          <div className="col  img-patient">
+            <img
+              className="profile-pic rounded-circle"
+              src={state.user_pic}
+              alt="user"
+            />
+          </div>
+          <div>
+            <h3>
+              <strong>{state.name}</strong>
+            </h3>
+            <p className="mb-0">
+              <strong>Patient ID:</strong>Patient ID: {state._id}
+            </p>
+            <p className="mb-0">
+              <strong>Social Secutiry Number:</strong>{" "}
+              {state.social_security_number}
+            </p>
+            <p className="mb-0">
+              <strong>Gender:</strong> {state.gender}
+            </p>
+            <p className="mb-0">
+              <strong>Date of Birthday: </strong>
+              {new Date(state.date_of_birth).toLocaleDateString()}
+            </p>
+          </div>
+        </div>
 
-        <p>Patient ID:{state._id}</p>
+        <div className="d-flex  align-items-center adressInfo mt-4">
+          <div className="col addressPatient">
+            <h3>Address Information</h3>
+            <ul>
+              <li>
+                <strong>Post Code: </strong>
+                {state.address.postCode}
+              </li>
 
-        <p>{state.social_security_number}</p>
-
-        <p>{state.gender}</p>
-
-        <p>
-          <small>
-            Date of Birthday: {new Date(state.date_of_birth).toLocaleDateString()}
-          </small>
-        </p>
-
-        <h2>Address Info</h2>
-        <hr />
-
-        <ul>
-          <li>
-            <strong>Post Code: </strong>
-            {state.address.postCode}
-          </li>
-          <li>
-            <strong>Street: </strong>
-            {state.address.street}
-          </li>
-          <li>
-            <strong>Neighbourhood: </strong>
-            {state.address.neighbourhood}
-          </li>
-          <li>
-            <strong>City: </strong>
-            {state.address.city}
-          </li>
-          <li>
-            <strong>State or Province: </strong>
-            {state.address.stateOrProvince}
-          </li>
-          <li>
-            <strong>Country: </strong>
-            {state.address.country}
-          </li>
-        </ul>
-
-        {state.records.map((record) => {
-          if (record) {
-            return (
-              <div>
-                <h2>
-                  Record Information of{" "}
-                  {new Date(record.date_of_visit).toLocaleDateString()}
-                </h2>
-                <hr />
-
-                
-                  
+              <li>
+                <strong>Street: </strong>
+                {state.address.street}
+              </li>
+              <li>
+                <strong>Neighbourhood: </strong>
+                {state.address.neighbourhood}
+              </li>
+              <li>
+                <strong>City: </strong>
+                {state.address.city}
+              </li>
+              <li>
+                <strong>State or Province: </strong>
+                {state.address.stateOrProvince}
+              </li>
+              <li>
+                <strong>Country: </strong>
+                {state.address.country}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="recordBox">
+          {state.records.map((record) => {
+            if (record) {
+              return (
+                <div className="recordInfo mt-4">
+                  <div className="recordRows">
+                    <h3>
+                      Record Information -{" "}
+                      {new Date(record.date_of_visit).toLocaleDateString()}
+                    </h3>
                     <strong>Doctor: </strong>
-                    {record.created_by.name} <br/>
-                  
-                  
+                    {record.created_by.name} <br />
                     <strong>Doctor Specialty: </strong>
                     {record.created_by.medical_specialty}
-                  <hr/>
-                  <ul>
-                  <li>
-                    <strong>Chief Complaint: </strong>
-                    {record.chief_complaint}
-                  </li>
-                  <li>
-                    <strong>History Illness:: </strong>
-                    {record.history_illness}
-                  </li>
+                    <ul>
+                      <li>
+                        <strong>Chief Complaint: </strong>
+                        {record.chief_complaint}
+                      </li>
+                      <li>
+                        <strong>History Illness:: </strong>
+                        {record.history_illness}
+                      </li>
 
-                  <li>
-                    <strong>Allergy: </strong>
-                    {record.allergy}
-                  </li>
+                      <li>
+                        <strong>Allergy: </strong>
+                        {record.allergy}
+                      </li>
 
-                  <li>
-                    <strong>Medications: </strong>
-                    {record.medications}
-                  </li>
+                      <li>
+                        <strong>Medications: </strong>
+                        {record.medications}
+                      </li>
 
-                  <li>
-                    <strong>Test Results: </strong>
-                    {record.test_results}
-                  </li>
-                </ul>
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })}
+                      <li>
+                        <strong>Test Results: </strong>
+                        {record.test_results}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>
       </div>
     </div>
   );

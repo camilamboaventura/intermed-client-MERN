@@ -26,7 +26,8 @@ function Navbar() {
             {loggedInUser.user.name ? (
               <div className="loginNavbar">
                 <Link to={`/profile/${_id}`} as={NavLink}>
-                  <text className="loginText">Profile</text>&nbsp; <text className="loginText">|</text>
+                  <text className="loginText">Profile</text>&nbsp;{" "}
+                  <text className="loginText">|</text>
                 </Link>
                 <Link
                   onClick={(event) => {
