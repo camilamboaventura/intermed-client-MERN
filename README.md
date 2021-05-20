@@ -15,7 +15,7 @@ Once this is a close app to be used by hospital and Medical Institutions, is not
 - Password:Admin@123
 
 ## Back-End Repository
-- [Check our back-end repository](https://github.com/ialmeidapb/intermed-client-MERN)
+- [Check our server repository](https://github.com/ialmeidapb/intermed-server-MERN)
 
 
 ## Follow the Dev Team
