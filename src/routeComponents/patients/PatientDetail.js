@@ -57,7 +57,8 @@ function PatientDetails() {
   }, [id]);
 
   return (
-    <div className="allPage">
+    <div className="vh-100">
+      <div className="allPage">
       <NavbarLogged />
       {loggedInUser.user.role === "DOCTOR" ? (
         <div className="row d-flex justify-content-end buttonCreate">
@@ -69,7 +70,7 @@ function PatientDetails() {
           </Link>
         </div>
       ) : null}
-      <div className="container">
+      <div className="container" style={{minHeight:"85vh"}}>
         <div className="d-flex justify-content-start align-items-center box mt-2">
           <div className="col  img-patient">
             <img
@@ -178,6 +179,7 @@ function PatientDetails() {
             }
           })}
         </div>
+      </div>
       </div>
     </div>
   );
