@@ -1,9 +1,7 @@
-import { useParams, NavLink, Link } from "react-router-dom";
-
+import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 import logo from "../assets/images/logo01.png";
 import "../assets/styles/Home.css";
-
 import { AuthContext } from "../contexts/authContext";
 
 function Navbar() {
@@ -12,8 +10,7 @@ function Navbar() {
   return (
     <div className="allNavbar">
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-transparet"
-        style={{ zIndex: "5" }}
+        className="navbar navbar-expand-lg"
       >
         <div className="ml-3">
           <NavLink className="navbar-brand" to="/main">
@@ -21,17 +18,6 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
         <div
           className="collapse navbar-collapse d-flex justify-content-end"
           id="navbarText"
@@ -54,7 +40,7 @@ function Navbar() {
                   &nbsp; <text className="loginText">Logout</text>
                 </Link>
                 <div variant="transparent">
-                  &nbsp; &nbsp;
+                  &nbsp; &nbsp; &nbsp;
                   <img
                     src={`https://ui-avatars.com/api/?name=${loggedInUser.user.name}&size=32&background=random`}
                     className="rounded-circle"
