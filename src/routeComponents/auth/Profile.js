@@ -22,6 +22,7 @@ function Profile() {
     user_pic: "",
     social_security_number: 0,
     _id: "",
+    medicalConsultation: [],
   });
 
   const { id } = useParams();
@@ -45,8 +46,8 @@ function Profile() {
   return (
     <div className="allSection">
       <NavbarLogged />
-      <div className="container mt-5">
-        <div className="container">
+      <div className="d-flex container mt-5">
+        <div className=" container">
           <div className="d-flex row justify-content-start align-items-center rounded ">
             <div className="col  img-profile">
               <img
@@ -111,6 +112,30 @@ function Profile() {
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="d-flex col mt-5 m-3">
+            {state.medicalConsultation.map((appointment) => {
+              return (
+                <div
+                  className=" card text-white bg-light mb-3"
+                  style={{ maxWidth: "18rem" }}
+                >
+                  <div className="card-body">
+                    <h5 className="card-title">Upcoming Appointments</h5>
+                    <div>
+                      <p className="card-text">
+                        <strong>Date: </strong>{" "}
+                        {appointment.date_of_appointment}
+                      </p>
+                      <p className="card-text">
+                        <strong>Time: </strong>
+                        {appointment.time_of_appointment}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

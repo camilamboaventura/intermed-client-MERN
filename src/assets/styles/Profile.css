@@ -4,13 +4,12 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
-  color: grey;
 }
 
 .allSection {
   /* overflow-x: hidden; */
   background-image: url("../../assets/images/hospital-background-2.jpg");
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-size: cover;
   background-position: center;
