@@ -3,6 +3,7 @@ import RecordCard from "./RecordCard";
 import api from "../../apis/api";
 import NavbarLogged from "../../components/NavBarLogged";
 import { useParams } from "react-router";
+import "../../assets/styles/Record.css";
 
 function RecordFeed() {
   const [records, setRecords] = useState([]);
@@ -23,16 +24,18 @@ function RecordFeed() {
   }, [id]);
 
   return (
-    <div>
+    <div className="backImg">
       <NavbarLogged />
-      <div className="row">
-        {records.map((record) => {
-          return (
-            <div key={record._id} className="col-12 col-sm-4 col-md-3">
-              <RecordCard {...record} />
-            </div>
-          );
-        })}
+      <div className="container">
+        <div className="row">
+          {records.map((record) => {
+            return (
+              <div className="recordCard" key={record._id}>
+                <RecordCard {...record} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

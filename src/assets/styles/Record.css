@@ -1,0 +1,18 @@
+.recordCard {
+  margin-top: 5rem;
+  margin-right: 10rem;
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: white;
+  width: 40rem;
+}
+
+.backImg {
+  background-image: url("../../assets/images/background-logo.png");
+  height: auto;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}

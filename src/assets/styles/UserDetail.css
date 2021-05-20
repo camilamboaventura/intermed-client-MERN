@@ -8,7 +8,7 @@
 }
 
 .photo {
-  height: 13rem;
+  max-height: 10rem;
   width: auto;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .img-profile {
-  /* margin-right: 20rem; */
-  margin-left: 10px;
+  margin-left: 2rem;
+  margin-right: 5rem;
 }
 
 /* .adressBox {
@@ -47,4 +47,7 @@
 
 .buttonDelete {
   margin-left: 1rem;
+}
+.userInfo {
+  margin-left: 3rem;
 }
