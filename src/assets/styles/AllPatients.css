@@ -1,5 +1,6 @@
 .allPatients {
   /* overflow-x: hidden; */
+  /* overflow-y: 10px; */
   background-image: url("../../assets/images/background-logo.png");
   height: auto;
   width: 100vw;
