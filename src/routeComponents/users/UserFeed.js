@@ -32,9 +32,10 @@ function UserFeed() {
   }, []);
 
   return (
-    <div className="allPatients">
+    <div className="vh-100">
+      <div className="allPatients">
       <NavbarLogged />
-      <div className="container">
+      <div className="container" style={{ minHeight: "85vh" }}>
         <h3 className="mt-5 mb-5">Our Patients:</h3>
         <div className="row">
           {users.USER.map((user) => {
@@ -46,6 +47,7 @@ function UserFeed() {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 }

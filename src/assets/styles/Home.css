@@ -4,6 +4,11 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: kohoMedium;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: kohoBold;
 }
 
 a:hover,
@@ -20,11 +25,6 @@ a:focus {
 }
 
 @font-face {
-  font-family: kohoSemiBold;
-  src: url(../fonts/KoHoSemiBold.ttf);
-}
-
-@font-face {
   font-family: kohoBold;
   src: url(../fonts/KoHoBold.ttf);
 }
@@ -35,8 +35,10 @@ a:focus {
   /* border: thin solid hsl(16, 28%, 14%); */
   background-color: rgba(255, 255, 255, 0.4);
   border-bottom: 0;
-  text-shadow: 1px 1px 2px black, 0 0 1em hsl(14, 77%, 52%),
-    0 0 0.2em hsl(14, 77%, 52%);
+}
+
+.navButton{
+  color: gray;
 }
 
 .loginNavbar {

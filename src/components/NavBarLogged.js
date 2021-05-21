@@ -44,25 +44,25 @@ function NavbarLogged() {
               </li>
               <li className="nav-item">
                 <Link to="/signup">
-                <text className="loginText">Create New User</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">Create New User</text>&nbsp;&nbsp;{" "}
                   <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link loginText" to="/admins">
-                <text className="loginText">Administation Team</text>&nbsp;&nbsp;{" "}
-                  <text className="loginText">|</text>
+                  <text className="loginText">Administation Team</text>
+                  &nbsp;&nbsp; <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className=" loginText" to="/doctors">
-                <text className="loginText">Medical Team</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">Medical Team</text>&nbsp;&nbsp;{" "}
                   <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link loginText" to="/users">
-                <text className="loginText">Patients</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">Patients</text>&nbsp;&nbsp;{" "}
                   <text className="loginText">|</text>
                 </Link>
               </li>
@@ -106,26 +106,18 @@ function NavbarLogged() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-collapse d-flex justify-content-end m-2">
               <li className="nav-item active">
-                <Link
-                  className=" loginText"
-                  to={`/profile/${loggedUser._id}`}
-                >
+                <Link className=" loginText" to={`/profile/${loggedUser._id}`}>
                   <text className="loginText">Profile</text>&nbsp;&nbsp;{" "}
                   <text className="loginText">|</text>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link loginText" to="/patients">
-                <text className="loginText">Patients</text>&nbsp;&nbsp;{" "}
+                  <text className="loginText">Patients</text>&nbsp;&nbsp;{" "}
                   <text className="loginText">|</text>
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="loginText" to="/patients">
-                  <text className="loginText">Appointments</text>&nbsp;&nbsp;{" "}
-                  <text className="loginText">|</text>
-                </Link>
-              </li>
+
               <li>
                 {loggedInUser ? (
                   <Link

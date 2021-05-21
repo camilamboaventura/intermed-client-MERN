@@ -136,7 +136,7 @@ function RecordCreate() {
   <div className="form-group">
     <label htmlFor="recordFormTestResults">Test Results</label>
     <input
-      type="file"
+      type="text"
       className="form-control"
       id="recordFormTestResults"
       name="test_results"

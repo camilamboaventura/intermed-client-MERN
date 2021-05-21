@@ -9,19 +9,24 @@ function Navbar() {
   const { _id } = loggedInUser.user;
   return (
     <div className="allNavbar">
-      <nav
-        className="navbar navbar-expand-lg"
-      >
-        <div className="ml-3">
-          <NavLink className="navbar-brand" to="/main">
-            <img className="logo" src={logo} alt="logo" />
-          </NavLink>
-        </div>
+      <nav className="navbar navbar-expand-lg">
+        <NavLink className="navbar-brand d-inline ml-3" to="/main">
+          <img className="logo d-inline-block" src={logo} alt="logo" />
+        </NavLink>
 
-        <div
-          className="collapse navbar-collapse d-flex justify-content-end"
-          id="navbarText"
+        <button
+          className="navbar-toggler navButton"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
           <div className="mr-3">
             {loggedInUser.user.name ? (
               <div className="loginNavbar">
