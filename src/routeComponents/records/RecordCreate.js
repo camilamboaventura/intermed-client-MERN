@@ -141,7 +141,7 @@ function RecordCreate() {
       id="recordFormTestResults"
       name="test_results"
       onChange={handleChange}
-      value={state.test_result}
+      value={state.test_results}
     />
   </div>
 
