@@ -9,7 +9,7 @@
 .allSection {
   /* overflow-x: hidden; */
   background-image: url("../../assets/images/hospital-background-2.jpg");
-  height: auto;
+  height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: center;
