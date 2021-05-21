@@ -125,7 +125,7 @@ function Profile() {
                     <div>
                       <p className="card-text">
                         <strong>Date: </strong>{" "}
-                        {appointment.date_of_appointment}
+                        {new Date(appointment.date_of_appointment).toLocaleDateString()}
                       </p>
                       <p className="card-text">
                         <strong>Time: </strong>
