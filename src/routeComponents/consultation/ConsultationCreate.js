@@ -15,6 +15,10 @@ function ConsultationCreate() {
     time_of_appointment: "",
   });
 
+  const hours = ["10:00", "14:00", "16:30"]
+
+  const [flag, setFlag] = useState(false);
+
   const [doctors, setDoctors] = useState([]);
  
   function handleChange(event) {
@@ -23,7 +27,7 @@ function ConsultationCreate() {
     } else {
       console.log(event.target)
       setState({ ...state, [event.target.name]: event.target.value });
-    }
+    } 
   }
 
   async function handleSubmit(event) {
@@ -53,7 +57,10 @@ function ConsultationCreate() {
       }
     }
     fetchRecords();
-  }, []);
+    if (state.date_of_appointment !== "" && state.doctor_id !== "") {
+      setFlag (true)
+    }
+  }, [state]);
 
   console.log(doctors);
   return (
@@ -75,18 +82,6 @@ function ConsultationCreate() {
               name="date_of_appointment"
               onChange={handleChange}
               value={state.date_of_appointment}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="formTimeOfAppointment">Time of Appointment</label>
-            <input
-              type="text"
-              className="form-control "
-              id="formTimeOfAppointment"
-              name="time_of_appointment"
-              onChange={handleChange}
-              value={state.time_of_appointment}
             />
           </div>
 
@@ -114,6 +109,31 @@ function ConsultationCreate() {
               })}
             </select>
           </div>
+
+          {flag ? <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <label className="input-group-text" htmlFor="formTimeOfAppointment">
+              Time of Appointment
+              </label>
+            </div>
+            <select
+              className="custom-select"
+              id="formTimeOfAppointment"
+              onChange={handleChange}
+              value={state.time_of_appointment}
+              name="time_of_appointment"
+            >
+             <option selected>
+                  Set your Appointment
+                </option>
+              {hours.map((hour) => {
+                return(
+                <option key={hour} value={hour}>
+                  {hour} 
+                </option>)
+              })}
+            </select>
+          </div> : ""}
 
           <hr />
           <button type="submit" className="btn btn-primary mb-5">
