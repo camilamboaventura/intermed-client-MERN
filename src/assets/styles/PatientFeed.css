@@ -30,7 +30,7 @@
 .createRecordBG{
     background-image: url("../../assets/images/2patientRecord.png");
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
