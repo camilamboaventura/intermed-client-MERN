@@ -10,7 +10,7 @@
 .allPage {
   /* overflow-x: hidden; */
   background-image: url("../../assets/images/background-logo.png");
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-size: 100% auto;
   background-position: center;

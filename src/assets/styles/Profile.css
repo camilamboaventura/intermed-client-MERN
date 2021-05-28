@@ -8,8 +8,8 @@
 
 .allSection {
   /* overflow-x: hidden; */
-  background-image: url("../../assets/images/hospital-background-2.jpg");
-  height: 100vh;
+  background-image: url("../../assets/images/hospital-background.jpg");
+  height: 105vh;
   width: 100vw;
   background-size: cover;
   background-position: center;

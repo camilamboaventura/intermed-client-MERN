@@ -57,7 +57,7 @@ function PatientDetails() {
   }, [id]);
 
   return (
-    <div className="vh-100">
+    <div>
       <div className="allPage">
         <NavbarLogged />
         {loggedInUser.user.role === "DOCTOR" ? (
