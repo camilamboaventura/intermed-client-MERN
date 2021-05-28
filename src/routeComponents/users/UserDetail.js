@@ -148,7 +148,7 @@ function UserDetail() {
           show={showModal}
           handleClose={() => setShowModal(false)}
           handleConfirm={() => history.push(`/users/delete/${id}`)}
-          title="Are you sure you want to delete this product?"
+          title="Are you sure you want to delete this user?"
         >
           <p>This action is irreversible. To confirm, click "Confirm".</p>
         </ConfirmationModal>
