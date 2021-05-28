@@ -24,9 +24,10 @@ function RecordFeed() {
   }, [id]);
 
   return (
-    <div className="backImg">
+    <div className="allPatients">
+      <div>
       <NavbarLogged />
-      <div className="container">
+      <div className="container" style={{ minHeight: "100vh" }}>
         <div className="row">
           {records.map((record) => {
             return (
@@ -37,6 +38,7 @@ function RecordFeed() {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 }

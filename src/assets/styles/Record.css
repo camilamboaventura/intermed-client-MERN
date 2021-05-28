@@ -10,9 +10,10 @@
 
 .backImg {
   background-image: url("../../assets/images/background-logo.png");
-  height: auto;
+  height: 100vh;
   width: 100vw;
-  background-size: 100% auto;
+  background-size: cover;
+  /* background-size: 100% auto; */
   background-position: center;
   background-repeat: repeat;
 }

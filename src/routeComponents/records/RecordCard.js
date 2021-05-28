@@ -41,6 +41,8 @@ function RecordCard(props) {
         </li>
       </ul>
     </div>
+    
+
   );
 }
 
